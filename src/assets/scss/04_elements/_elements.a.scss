@@ -1,0 +1,15 @@
+a {
+  color: $selection-text-color;
+  &:visited {
+    color: $selection-text-color;
+  }
+
+  &:hover {
+    //color: $primary-color;
+    text-decoration: none !important;
+  }
+
+  .icon {
+    cursor: pointer;
+  }
+}

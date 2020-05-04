@@ -1,0 +1,69 @@
+@mixin o-section-build($custom-spacing) {
+  @include vertical-padding(spacing($custom-spacing));
+
+  .o-section__margin-bottom {
+    margin-bottom: spacing($custom-spacing);
+  }
+
+  .o-section__margin-top {
+    margin-top: spacing($custom-spacing);
+  }
+}
+
+.o-section {
+  @include o-section-build(base);
+}
+
+.o-section--medium {
+  @include media($desktop) {
+    @include o-section-build(medium);
+  }
+  @include media($tablet) {
+    @include o-section-build(medium);
+  }
+  @include media($only-mobile) {
+    @include o-section-build(medium);
+  }
+}
+
+.o-section--large {
+  @include media($tablet) {
+    @include o-section-build(large);
+  }
+
+  @include media($desktop) {
+    @include o-section-build(huge);
+  }
+
+  @include media($only-mobile) {
+    @include o-section-build(large);
+  }
+}
+
+.o-section--superhero {
+  @include media($tablet) {
+    @include o-section-build(huge);
+  }
+
+  @include media($desktop) {
+    @include o-section-build(hero);
+  }
+
+  @include media($only-mobile) {
+    @include o-section-build(hero);
+  }
+}
+
+.o-section--no-padding-top {
+  padding-top: 0;
+}
+
+.o-section--no-padding-bottom {
+   padding-bottom: 0;
+}
+
+.o-section-padding\@only-mobile-tablet {
+  @include media($only-mobile-tablet) {
+    padding: spacing(base) 0 !important;
+  }
+}

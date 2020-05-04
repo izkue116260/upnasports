@@ -1,0 +1,12 @@
+ {% extends "layouts::/html.twig" %}
+ {% block body %}
+   <div class="page">
+      {% include 'includes::/header-home.twig' %}
+
+         {% block page %}
+      
+         {% endblock %}
+
+      {% include 'includes::/footer.twig' %}
+   </div>
+ {% endblock %}

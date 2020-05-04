@@ -1,0 +1,31 @@
+////
+/// @group margins
+////
+
+/// Padding vertical
+/// @param $padding - Cantidad de padding con unidad
+@mixin vertical-padding($padding) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+
+/// Padding horizontal
+/// @param $padding - Cantidad de padding con unidad
+@mixin horizontal-padding($padding) {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+/// Margen vertical
+/// @param $padding - Cantidad de margen con unidad
+@mixin vertical-margin($padding) {
+  margin-top: $padding;
+  margin-bottom: $padding;
+}
+
+/// Margen horizontal
+/// @param $padding - Cantidad de margen con unidad
+@mixin horizontal-margin($padding) {
+  margin-left: $padding;
+  margin-right: $padding;
+}

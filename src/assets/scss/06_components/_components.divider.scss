@@ -1,0 +1,29 @@
+.divider {
+  margin-top: spacing(large);
+  margin-bottom: spacing(large);
+  border-top: 1px solid $gris-claro;
+  display: flex;
+  justify-content: flex-end;
+
+  .link {
+    color: $primary;
+    transform: translateZ(0);
+    transition: transform 0.7s ease-out;
+  }
+}
+
+.divider--white {
+  border-top: rem(1px) solid #fff;
+}
+
+.divider--vertical {
+  width: 1px;
+  height: 100%;
+  background: $gris-claro;
+}
+
+.divider-small {
+  padding: 20px 0;
+  border-bottom: 1px solid $gris-claro;
+  display: block;
+}

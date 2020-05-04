@@ -1,0 +1,17 @@
+h1 {
+  font-family: "Arial Black", sans-serif;
+  font-weight: 300;
+  @include typi(h1);
+}
+
+h2 {
+  font-family: "Arial Black", sans-serif;
+  font-weight: 300;
+  @include typi(h2);
+}
+
+h3 {
+  font-family: "Arial Black", sans-serif;
+  font-weight: 300;
+  @include typi(h3);
+}

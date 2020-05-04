@@ -1,0 +1,85 @@
+.btn {
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: $border-radius;
+  padding: spacing(small);
+  &.btn-primary {
+    color: $white !important;
+    background-color: $primary;
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+  &.btn-default {
+    background-color: $gris-claro;
+    
+    &:hover {
+      background-color: $gris;
+    }
+  }
+  &.btn-secondary {
+    background-color: $white;
+    &:hover {
+      background-color: $gris-claro;
+    }
+  }
+  &.btn--large {
+    padding: spacing(base) spacing(large);
+    
+    @include media($only-mobile) {
+      padding: spacing(base);
+    }
+  }
+
+  &.btn-secondary--brand {
+    background-color: $white;
+    color: $primary;
+    border: 1px solid $primary;
+    &:hover {
+      background-color: $gris-claro;
+    }
+  }
+  
+}
+
+.btn-dropdown {
+  .dropdown-menu {
+    display: none;
+
+    .dropdown-item {
+      display: block;
+    }
+  }
+
+  .btn-info:hover {
+    text-decoration: none;
+    background-color: $secondary;
+  }
+
+  .show {
+    display: block;
+  }
+}
+.btn-mas-info {
+  
+
+  .btn-mas-info--down {
+    opacity: 30%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    &:hover {
+      opacity: 70%;
+    }
+  }
+} 
+
+.botonera {
+  margin-bottom: spacing(huge);
+  margin-top: spacing(large);
+  a:not(:last-child) {
+    margin-right: spacing(base);
+  }
+}

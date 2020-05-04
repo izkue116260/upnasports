@@ -1,0 +1,15 @@
+body {
+  font-family: $font-family-base;
+  color: $body-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-family: $font-family-base;
+  color: $selection-text-color;
+}

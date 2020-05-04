@@ -1,0 +1,80 @@
+$directions: ('-top', '-right', '-bottom', '-left');
+
+@each $size in map-keys($spacing) {
+
+  @each $direction in $directions {
+
+    @if $size == 'base' {
+      .u-padding#{$direction} {
+        padding#{$direction}: map-get($spacing, $size) !important;
+      }
+
+      .u-undo-padding#{$direction} {
+        padding#{$direction}: - map-get($spacing, $size) !important;
+      }
+    } @else {
+      .u-padding#{$direction}-#{$size} {
+        padding#{$direction}: map-get($spacing, $size) !important;
+      }
+
+      .u-undo-padding#{$direction}-#{$size} {
+        padding#{$direction}: - map-get($spacing, $size) !important;
+      }
+    }
+  }
+}
+
+@each $direction in $directions {
+  .u-padding#{$direction}-none {
+    padding#{$direction}: 0 !important;
+  }
+}
+
+@each $size in map-keys($spacing) {
+  @if $size == 'base' {
+    .u-padding-vertical {
+      @include vertical-padding(map-get($spacing, $size));
+    }
+
+    .u-padding-horizontal {
+      @include horizontal-padding(map-get($spacing, $size));
+    }
+
+    .u-padding {
+      padding: map-get($spacing, $size);
+    }
+  } @else {
+    .u-padding-vertical-#{$size} {
+        @include vertical-padding(map-get($spacing, $size));
+    }
+
+    .u-padding-horizontal-#{$size} {
+        @include horizontal-padding(map-get($spacing, $size));
+    }
+
+    .u-padding {
+      padding: map-get($spacing, $size);
+    }
+  }
+}
+
+.u-padding-none-left {
+ padding-left: 0;
+}
+
+.u-padding-horizonatal-none {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.u-padding-left\@desktop {
+  @include media($desktop) {
+    padding-left: spacing(base);
+  }
+}
+
+.u-padding-right\@desktop {
+  @include media($desktop) {
+    padding-right: spacing(base);
+  }
+}

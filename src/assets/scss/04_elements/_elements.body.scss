@@ -1,0 +1,5 @@
+body {
+  color: $body-color;
+  font-family: Arial, sans-serif;
+  @include typi(base);
+}

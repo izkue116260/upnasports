@@ -1,0 +1,30 @@
+.list--no-style {
+  list-style: none;
+}
+
+.list-footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  @include media($only-mobile) {
+    display: inline-block;
+  }
+  
+  .list-footer--item {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid $white;
+    @include typi("tiny");
+    a {
+      color: $white;
+      font-weight: 300;
+    }
+    &:last-child {
+      border: none;
+    }
+    @include media($only-mobile) {
+      border: none;
+    }
+  }
+  
+}

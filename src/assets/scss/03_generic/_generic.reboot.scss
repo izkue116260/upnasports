@@ -1,0 +1,287 @@
+// Color de fondo y texto al seleccionar contenido en una página
+*::selection {
+  background: $selection-text-color;
+  color: #fff;
+}
+
+@include typi-init;
+
+body {
+  margin: 0;
+  position: relative;
+  min-height: 100%;
+
+
+  @include typi('base');
+
+  
+  @include antialiased;
+  -webkit-text-size-adjust: 100%; /* stylelint-disable-line */
+  -ms-text-size-adjust: 100%; /* stylelint-disable-line */
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  position: relative;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.full-image {
+  img {
+    width: 100%;
+  }
+}
+
+html {
+	overflow: auto;
+}
+
+a {
+  //color: $selection-text-color;
+  transition: all 0.15s ease-in;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    //color: $brand-color;
+    text-decoration: none !important;
+  }
+
+  &:visited {
+    color: $selection-text-color;
+  }
+}
+
+.page img {
+  max-width: 100%;
+}
+
+//
+// Typography
+//
+
+// Remove top margins from headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #222;
+}
+
+// Reset margins on paragraphs
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+address {
+  margin-bottom: 0;
+}
+
+small {
+  display: inline-block;
+}
+
+ol,
+ul,
+dl {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dd {
+  margin-bottom: 0;
+  margin-left: 0; // Undo browser default
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+//
+// Figures
+//
+
+figure,
+legend,
+label,
+pre {
+  // Normalize adds `margin` to `figure`s as browsers apply it inconsistently.
+  // We reset that to create a better flow in-page.
+  margin: 0;
+}
+
+//
+// Images
+//
+
+img {
+  // By default, `<img>`s are `inline-block`. This assumes that, and vertically
+  // centers them. This won't apply should you reset them to `block` level.
+  vertical-align: middle;
+  // Note: `<img>`s are deliberately not made responsive by default.
+  // For the rationale behind this, see the comments on the `.img-fluid` class.
+}
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+[role='button'] {
+  cursor: pointer;
+}
+
+// Avoid 300ms click delay on touch devices that support the `touch-action` CSS property.
+//
+// In particular, unlike most other browsers, IE11+Edge on Windows 10 on touch devices and IE Mobile 10-11
+// DON'T remove the click delay when `<meta name="viewport" content="width=device-width">` is present.
+// However, they DO support removing the click delay via `touch-action: manipulation`.
+// See:
+// * https://v4-alpha.getbootstrap.com/content/reboot/#click-delay-optimization-for-touch
+// * http://caniuse.com/#feat=css-touch-action
+// * https://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
+a,
+area,
+button,
+[role='button'],
+input,
+label,
+select,
+summary,
+textarea {
+  touch-action: manipulation;
+  min-width: inherit;
+}
+
+//
+// Tables
+//
+table {
+  // No longer part of Normalize since v4
+  border-collapse: collapse;
+}
+
+th {
+  // Centered by default, but left-align-ed to match the `td`s below.
+  text-align: left;
+}
+
+input,
+button,
+select,
+textarea {
+  // Normalize includes `font: inherit;`, so `font-family`. `font-size`, etc are
+  // properly inherited. However, `line-height` isn't inherited there.
+  line-height: inherit;
+}
+
+/* stylelint-disable */
+select {
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+/* stylelint-enable */
+
+/* stylelint-disable */
+input[type='radio'],
+input[type='checkbox'] {
+  // Apply a disabled cursor for radios and checkboxes.
+  //
+  // Note: Neither radios nor checkboxes can be readonly.
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'] {
+  // Remove the default appearance of temporal inputs to avoid a Mobile Safari
+  // bug where setting a custom line-height prevents text from being vertically
+  // centered within the input.
+  // See https://bugs.webkit.org/show_bug.cgi?id=139848
+  // and https://github.com/twbs/bootstrap/issues/11266
+  -webkit-appearance: listbox;
+}
+/* stylelint-enable */
+
+textarea {
+  // Textareas should really only resize vertically so they don't break their (horizontal) containers.
+  resize: vertical;
+}
+
+fieldset {
+  // Browsers set a default `min-width: min-content;` on fieldsets,
+  // unlike e.g. `<div>`s, which have `min-width: 0;` by default.
+  // So we reset that to ensure fieldsets behave more like a standard block element.
+  // See https://github.com/twbs/bootstrap/issues/12359
+  // and https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
+  min-width: 0;
+  // Reset the default outline behavior of fieldsets so they don't affect page layout.
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+input[type='search'] { /* stylelint-disable-line */
+  // This overrides the extra rounded corners on search inputs in iOS so that our
+  // `.form-control` class can properly style them. Note that this cannot simply
+  // be added to `.form-control` as it's not specific enough. For details, see
+  // https://github.com/twbs/bootstrap/issues/11586.
+  -webkit-appearance: none; /* stylelint-disable-line */
+}
+
+// Always hide an element with the `hidden` HTML attribute (from PureCSS).
+[hidden] {
+  display: none !important;
+}
+/* stylelint-disable */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* stylelint-enable */
+
+input[type='number'] { /* stylelint-disable-line */
+  // This overrides the extra rounded corners on search inputs in iOS so that our
+  // `.form-control` class can properly style them. Note that this cannot simply
+  // be added to `.form-control` as it's not specific enough. For details, see
+  // https://github.com/twbs/bootstrap/issues/11586.
+  -webkit-appearance: none; /* stylelint-disable-line */
+  -moz-appearance: none; /* stylelint-disable-line */
+}
+
+//webpart
+.ms-webpart-zone,
+.ms-webpart-cell-vertical,
+.ms-webpart-chrome,
+.ms-rte-embedil {
+  display: block;
+}
+
+.ms-webpartzone-cell {
+  margin: auto auto 0;
+}

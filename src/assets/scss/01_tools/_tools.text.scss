@@ -1,0 +1,12 @@
+/// Utilizar para aplicar bold al texto, mejora la lectura
+@mixin antialiased() {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+/// Utilizar para aplicar bold al texto, mejora la lectura
+@mixin bold-weight-font() {
+  font-weight: bold;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,24 @@
+.outer-container {
+  max-width: 1400px !important;
+  align-content: center;
+  
+}
+
+.container {
+  max-width: 1280px !important;
+  margin: auto;
+  
+  .shadow-derecha {
+    box-shadow: 40px 0 50px $gris-claro;
+  }
+  .shadow-izquierda {
+    box-shadow: -50px 0 50px $gris-claro;
+  }
+}
+
+.container-inner {
+  max-width: 645px !important;
+  margin: auto;
+  padding-right: spacing("base");
+  padding-left: spacing("base");
+}

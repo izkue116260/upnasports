@@ -1,0 +1,24 @@
+
+
+.titulo {
+    margin-top: spacing(giant);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    @include typi(h1);
+
+    @include media($only-mobile) {
+        margin-bottom: spacing(large);
+        margin-top: spacing(large);
+    }
+
+    &.titulo-marca {
+        color: $secondary;   
+    }
+}
+
+.title {
+    margin-top: spacing(large);
+    margin-bottom: spacing(large);
+    border-bottom: 3px solid $secondary;
+}

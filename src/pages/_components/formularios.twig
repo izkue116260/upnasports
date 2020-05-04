@@ -1,0 +1,34 @@
+<div class="container">
+    <h2 class="title">Formulario obligatorio</h2>
+    <div class="form-group">
+        <label for="obligatorio" class="form-label">Nombre y Apellidos <span class="form-label--obligatorio">(necesario)</span> </label>
+        <input type="text" class="form-control" id="obligatorio" placeholder="María García López" required>
+    </div>
+
+    <h2 class="title">Formulario texto</h2>
+    <div class="form-group">
+        <label for="texto" class="form-label">Nombre y Apellidos </label>
+        <input type="text" class="form-control" id="texto" placeholder="María García López">
+    </div>
+
+    <h2 class="title">Formulario email o teléfono</h2>
+    <div class="form-group">
+        <label for="email-tfn" class="form-label">Nombre y Apellidos </label>
+        <input type="email" class="form-control" id="email-tfn" placeholder="María García López">
+    </div>
+
+    <h2 class="title">Formulario contraseña</h2>
+    <div class="form-group">
+        <label for="password" class="form-label">Contraseña </label>
+        <input type="password" class="form-control" id="password" placeholder="******">
+    </div>
+    
+    <h2 class="title">Formulario error</h2>
+    <div class="form-group">
+        <label for="obligatorio" class="form-label">Nombre y Apellidos<span class="form-label--obligatorio">(necesario)</span> </label>
+        <input type="text" class="form-control form-control--error" id="obligatorio" placeholder="María García López" required>
+        <p class="u-text-color-secondary u-margin-top-small">
+            Este campo es obligatorio
+        </p>
+    </div>
+</div>

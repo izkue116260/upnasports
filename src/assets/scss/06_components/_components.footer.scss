@@ -1,0 +1,31 @@
+.footer {
+    background-color: #e8263e;
+    .footer-content {
+        display: flex;
+        width: 100%;
+        @include media($only-mobile) {
+            display: block;
+        }
+        .footer-content__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: spacing(small);
+        }
+        .footer-content__logo {
+            margin-right: spacing(large);
+        }
+        .footer-content__media {
+            display: flex;
+            .footer-content__media-item { 
+                margin: spacing(small);
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+        .footer-content__telefono {
+            color: $white;
+        }
+    }
+}

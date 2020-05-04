@@ -1,0 +1,135 @@
+// Genera estilos de utilidad de márgenes por cada tamaño de $spacing
+$directions: ('-top', '-right', '-bottom', '-left');
+
+@each $size in map-keys($spacing) {
+
+  @each $direction in $directions {
+
+    @if $size == 'base' {
+      .u-margin#{$direction} {
+        margin#{$direction}: map-get($spacing, $size) !important;
+      }
+
+      .u-undo-margin#{$direction} {
+        margin#{$direction}: - map-get($spacing, $size) !important;
+      }
+    } @else {
+      .u-margin#{$direction}-#{$size} {
+        margin#{$direction}: map-get($spacing, $size) !important;
+      }
+
+      .u-undo-margin#{$direction}-#{$size} {
+        margin#{$direction}: - map-get($spacing, $size) !important;
+      }
+    }
+  }
+}
+
+@each $direction in $directions {
+  .u-margin#{$direction}-none {
+    margin#{$direction}: 0 !important;
+  }
+}
+
+.u-margin-bottom-small\@only-mobile {
+  @include media($only-mobile) {
+    margin-bottom: spacing(small);
+  }
+}
+
+.u-margin-bottom\@only-mobile-tablet {
+  @include media($only-mobile-tablet) {
+    margin-bottom: spacing(base);
+  }
+}
+
+.u-margin-top\@only-mobile {
+  @include media($only-mobile) {
+    margin-top: spacing(base);
+  }
+}
+
+.u-margin-bottom\@tablet {
+  @include media($tablet) {
+    margin-bottom: spacing(base);
+  }
+}
+
+.u-margin-bottom\@desktop {
+  @include media($desktop) {
+    margin-bottom: spacing(base);
+  }
+}
+
+.u-margin-bottom-medium\@tablet {
+  @include media($tablet) {
+    margin-bottom: spacing(medium);
+  }
+}
+
+.u-margin-bottom-large\@tablet {
+  @include media($tablet) {
+    margin-bottom: spacing(large);
+  }
+}
+
+.u-margin-bottom\@only-mobile-tablet {
+  @include media($only-mobile-tablet) {
+    margin-bottom: spacing(base);
+  }
+}
+
+.u-margin-top-superhero\@desktop {
+   @include media($desktop) {
+    margin-top: spacing(superhero);
+  }
+}
+
+.u-margin-bottom\@only-mobile {
+  @include media($only-mobile) {
+    margin-bottom: spacing(base);
+  }
+}
+
+.u-margin-bottom-large\@desktop {
+  @include media($desktop) {
+    margin-bottom: spacing(large);
+  }
+}
+
+.u-margin-bottom-huge\@desktop {
+  @include media($desktop) {
+    margin-bottom: spacing(huge);
+  }
+}
+
+.u-margin-right-tiny\@desktop {
+  @include media($desktop) {
+    margin-right: spacing(tiny);
+  }
+}
+
+.u-margin-right-medium\@desktop {
+  @include media($desktop) {
+    margin-right: spacing(medium);
+  }
+}
+
+.u-margin-left-medium\@desktop {
+  @include media($desktop) {
+    margin-left: spacing(medium);
+  }
+}
+
+.u-margin-left\@desktop {
+  @include media($desktop) {
+    margin-left: spacing(base);
+  }
+}
+
+.u-margin-right\@desktop {
+  @include media($desktop) {
+    margin-right: spacing(base);
+  }
+}
+

@@ -1,0 +1,36 @@
+$displays: ('block', 'inline', 'inline-block', 'inline-flex', 'flex', 'none', 'initial', 'inherit', 'grid');
+
+@each $display in $displays {
+
+  @each $bp-alias, $bp-aliasprops in $bp-aliases {
+
+    $name: nth($bp-aliasprops, 1);
+    $breakpoint-point: nth($bp-aliasprops, 2);
+
+    .u-display-#{$display}-#{$name} {
+      @include media($breakpoint-point) {
+        display: #{$display} !important;
+      }
+    }
+  }
+
+  .u-display-#{$display} {
+    display: #{$display} !important;
+  }
+}
+
+.u-overflow-hidden {
+  overflow: hidden !important;
+}
+
+.u-full-height {
+  height: 100%;
+}
+
+.u-full-width {
+  width: 100%;
+}
+
+.u-max-full-width {
+  max-width: 100%;
+}

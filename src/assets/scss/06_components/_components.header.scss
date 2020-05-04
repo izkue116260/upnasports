@@ -1,0 +1,84 @@
+.header-image {
+  position: relative;
+  background-image: url('../images/header.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 280px;
+  .header-image__links {
+    display: flex;
+    text-align: center;
+    flex: 0 0 100%;
+    align-items: flex-start;
+    .bloque-header {
+      padding: spacing(small);
+      color: white !important;
+      flex-grow: 1;
+      &:hover {
+        color: $body-color !important;
+      }
+      &.bloque-header--actividades {
+        background-color: $actividades2;
+        &:hover {
+          background-color: $actividades;
+        }
+      }
+      &.bloque-header--instalaciones {
+        background-color: $instalaciones2;
+        &:hover {
+          background-color: $instalaciones;
+        }
+      }
+      &.bloque-header--tarifas {
+        background-color: $tarifas2;
+        &:hover {
+          background-color: $tarifas;
+        }
+      }
+      &.bloque-header--actualidad {
+        background-color: $actualidad2;
+        &:hover {
+          background-color: $actualidad;
+        }
+      }
+      &.bloque-header--contacto {
+        background-color: $contacto2;
+        &:hover {
+          background-color: $contacto;
+        }
+      }
+    }
+    @include media($only-mobile) {
+      display: none;
+    }
+  }
+  @include media($only-mobile) {
+    height: 140px;
+  }
+}
+
+.pre-header {
+  background-color: $primary;
+  background-image: url('../images/logo.png');
+  background-repeat: no-repeat;
+  
+  background-position-x: spacing(base);
+  //background: $primary url('../images/logo.png') no-repeat spacing(base);
+  background-size: contain;
+  padding: spacing(base);
+  text-align: end;
+  .btn {
+    margin: spacing(small);
+  }
+}
+
+.header-indice {
+    background-color: $primary;
+    width: 100%;
+}
+
+
+// MEDIA QUERY EXAMPLE
+
+@include media-breakpoint-up(lg) {
+
+}

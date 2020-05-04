@@ -1,0 +1,10 @@
+@each $colorName, $colorValue in $colors {
+  .u-background-color-#{$colorName} {
+    background-color: $colorValue;
+  }
+
+  .u-text-color-#{$colorName} {
+      color: $colorValue;
+  }
+}
+

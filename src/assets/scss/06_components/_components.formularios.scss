@@ -1,0 +1,46 @@
+.form-group {
+    margin-bottom: spacing(base);
+  
+    @include media($only-mobile) {
+        display: block;
+    }
+}
+
+.form-label {
+    margin-bottom: spacing(tiny);
+    font-weight: bold;
+  
+    @include media($only-mobile) {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .form-label--obligatorio {
+        color: $primary;
+    }
+}
+
+
+.form-control {
+    background-color: #fff;
+    padding: spacing(small);
+    border: 1px solid $gris;
+    border-radius: 4px;
+    width: 100%;
+  
+    &:read-only {
+      background-color: $gris;
+    }
+  
+    &::placeholder {
+      color: $gris;
+    }
+  
+    &:disabled {
+      color: $gris;
+    }
+
+    &.form-control--error {
+      border: 1px solid $secondary;
+    }
+}

@@ -1,0 +1,19 @@
+/// Calcula el color hover
+@function hover-color($color) {
+  @return mix($body-color, $color, 40%);
+}
+
+/// Calcula el color deshabilitado
+@function disabled-color($color) {
+  @return $control-disabled-color;
+}
+
+/// Calcula un color de texto legible según el color de fondo
+@function readable-color-for($background-color) {
+  @if (lightness($background-color) > 65) {
+    @return $body-color; // Lighter background, return dark color
+  } @else {
+    @return $inverse-text-color; // Darker background, return light color
+  }
+}
+

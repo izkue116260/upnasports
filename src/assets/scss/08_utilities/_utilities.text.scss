@@ -1,0 +1,165 @@
+//Tamaños de Fuentes
+@include typi-create-classes();
+
+.u-title-h1 {
+  @include typi('h1');
+}
+
+.u-title-h2 {
+  @include typi('h2');
+}
+
+.u-title-h3 {
+ @include typi('h3');
+}
+
+.u-title-h4 {
+  @include typi('h4');
+}
+
+.u-font-medium {
+  @include typi("medium");
+ }
+
+.u-font-base {
+  @include typi('base');
+}
+
+.u-font-small {
+  @include typi('small');
+}
+
+.u-font-tiny {
+ @include typi('tiny');
+}
+
+// aspectos fuentes
+.u-valign-super {
+  vertical-align: super !important;
+}
+
+.u-valign-middle {
+  vertical-align: middle !important;
+}
+
+.u-valign-baseline {
+  vertical-align: baseline !important;
+}
+
+.u-text-transform-uppercase {
+  text-transform: uppercase !important;
+}
+
+.u-text-transform-lowercase {
+  text-transform: lowercase !important;
+}
+
+.u-text-transform-capitalize {
+  text-transform: capitalize !important;
+}
+
+.u-screen-reader-only {
+  @include sr-only();
+}
+
+.u-font-bold {
+  font-weight: bold !important;
+}
+
+.u-font-light {
+  font-weight: 300 !important;
+}
+
+.u-font-normal {
+  font-weight: normal !important;
+}
+
+.u-font-italic {
+  font-style: italic !important;
+}
+
+.u-text-decoration-none {
+  text-decoration: none !important;
+}
+
+.u-text-decoration-underline {
+  text-decoration: underline !important;
+}
+
+.u-text-decoration-strike {
+  text-decoration: line-through !important;
+}
+
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-text-center\@only-mobile {
+  @include media($only-mobile) {
+    text-align: center !important;
+  }
+}
+
+.u-text-right {
+  text-align: right !important;
+}
+
+.u-text-left {
+  text-align: left !important;
+}
+
+.u-white-space-nowrap {
+  white-space: nowrap;
+}
+
+.u-white-space-normal {
+  white-space: normal !important;
+}
+
+.u-text-brand-actividades {
+  color: $primary !important;
+
+  &:visited {
+    color: $primary;
+  }
+}
+
+.u-text-brand-instalaciones {
+  color: $instalaciones !important;
+
+  &:visited {
+    color: $instalaciones;
+  }
+}
+
+.u-text-brand-actualidad {
+  color: $actualidad !important;
+
+  &:visited {
+    color: $actualidad;
+  }
+}
+
+.u-text-brand-tarifas {
+  color: $tarifas !important;
+
+  &:visited {
+    color: $tarifas;
+  }
+}
+
+.u-text-brand-contacto {
+  color: $contacto !important;
+
+  &:visited {
+    color: $contacto;
+  }
+}
+
+.u-text-white {
+  color: $white;
+}
+
+.u-opacity-0 {
+  opacity: 0;
+}
