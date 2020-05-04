@@ -1,0 +1,63 @@
+# Packages
+!/node_modules/gulp-tasks-pleasure
+/node_modules/*
+
+# Output folders
+build-dev/
+build/
+
+.tmp
+
+# Ignore hidden folders, this takes care of .tmp, .sass-cache, and many others
+.*/
+
+# OSX
+._*
+.AppleDouble
+.DS_Store
+.localized
+.LSOverride
+.Spotlight-V100
+.Trashes
+Icon
+
+# Windows
+Desktop.ini
+ehthumbs.db
+Thumbs.db
+
+# Linux
+*~
+
+# Ignore tags created by etags and ctags
+TAGS
+tags
+
+# Always-ignore files and folders #
+*.diff
+*.err
+*.log
+*.orig
+*.rej
+*.swn
+*.swo
+*.swp
+._*
+*~
+
+# Ignore packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+*.sublime-projectcompletions
+
+bower_components/
