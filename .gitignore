@@ -1,6 +1,6 @@
 # Packages
-!/node_modules/gulp-tasks-pleasure
 /node_modules/*
+!/node_modules/gulp-tasks-pleasure
 
 # Output folders
 build-dev/
