@@ -40,10 +40,10 @@
           background-color: $actualidad;
         }
       }
-      &.bloque-header--contacto {
-        background-color: $contacto2;
+      &.bloque-header--reservas {
+        background-color: $reservas2;
         &:hover {
-          background-color: $contacto;
+          background-color: $reservas;
         }
       }
     }
