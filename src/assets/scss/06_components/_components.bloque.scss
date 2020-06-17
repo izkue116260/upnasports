@@ -57,6 +57,24 @@
 .bloque-imagen {
   img{
     height: 200px;
-    width: 300px;
+  }
+}
+
+.bloque--caja {
+  padding: spacing(base);
+  border: 1px solid $gris-oscuro;
+  color: $gris-oscuro;
+  display: flex;
+  
+  div {
+    padding: spacing(base);
+  }
+}
+
+.bloque-elige {
+  text-align: end;
+  margin-bottom: spacing(base);
+  select {
+    padding: spacing(tiny);
   }
 }
