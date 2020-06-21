@@ -11,18 +11,19 @@ $(window).on("load", function () {
   });
 
   $("#rango-edad").change(function () {
-    if ($(this).val() === 1) {
+    console.log($(this).val());
+    if ($(this).val() == 1) {
       $(".bloque--tres-cinco").removeClass("u-display-none");
       $(".bloque--seis-ocho").addClass("u-display-none");
-      //$(".bloque--nueve-trece").addClass("u-display-none");
-    } /* if ($(this).val() === 2)*/ else {
+      $(".bloque--nueve-trece").addClass("u-display-none");
+    } else if ($(this).val() == 2) {
       $(".bloque--tres-cinco").addClass("u-display-none");
       $(".bloque--seis-ocho").removeClass("u-display-none");
-      //$(".bloque--nueve-trece").addClass("u-display-none");
-    } /*else {
+      $(".bloque--nueve-trece").addClass("u-display-none");
+    } else {
       $(".bloque--tres-cinco").addClass("u-display-none");
       $(".bloque--seis-ocho").addClass("u-display-none");
       $(".bloque--nueve-trece").removeClass("u-display-none");
-    }*/
+    }
   });
 });

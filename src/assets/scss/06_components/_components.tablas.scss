@@ -21,21 +21,31 @@
 }
 
 .table {
-    width: 100%;
-    max-width: 100%;
-    border-collapse: collapse;
-    background-color: transparent;
-    margin-bottom: 1rem;
-    .color {
-        height: 66px;
-        width: 130px;
-        border-radius: $border-radius;
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+  margin-left: spacing(huge);
+}
+
+.table--tarifas {
+ 
+  tbody{
+    border: 1px solid black;
+  }
+  th {
+    background-color: $tarifas2;
+    text-transform: uppercase;
+    color: $white;
+    text-align: center;
+  }
+  tr {
+    &:nth-child(odd) {
+      background-color: $gris-oscuro;
+      color: $white;
     }
-    .nombre {
-        font-size: $font-size-base;
-    }
-    
-    .hexadecimal {
-        font-size: $font-size-base;
+    td,th{
+      padding: spacing(small) spacing(huge);
     }
   }
+}
