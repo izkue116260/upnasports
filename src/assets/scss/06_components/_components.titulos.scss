@@ -42,3 +42,18 @@
     margin-bottom: spacing(large);
     border-bottom: 3px solid $secondary;
 }
+
+.titulo--deporte {
+    color:black; 
+    font-weight: bold; 
+    text-align: center
+}
+
+.title--instalaciones {
+   color: $instalaciones2;
+   text-align: center;
+   font-weight: bold; 
+   margin-top: spacing(small);
+   @include typi('h4');
+   margin-bottom: spacing(huge);
+}

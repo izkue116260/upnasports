@@ -24,6 +24,15 @@
             opacity: 70%;
         }
     }
+    .texto--slide {
+      width: 250px;
+      background-color: $primary;
+      color: $white; 
+      padding: spacing(base);
+      position: absolute; 
+      top: 50px; 
+      left: 100px
+    }
 }
 
 .bloque-media {
@@ -75,6 +84,38 @@
   text-align: end;
   margin-bottom: spacing(base);
   select {
-    padding: spacing(tiny);
+    cursor: pointer;
+    border-radius: $border-radius;
+    background-color: $white;
+    padding: spacing(small);
+    color: $primary;
+    &:hover {
+      background-color: $gris;
+    }
+  }
+}
+
+.bloque--reservas {
+  display: flex;
+  justify-content: space-between;
+  color: $white;
+  font-weight: bold;
+  text-transform: uppercase;
+ 
+  @include typi('h2');
+  button {
+    padding: spacing(base) spacing(huge);
+  }
+
+  .activated {
+    color: $reservas;
+    @include typi('h1');
+    text-decoration: underline;
+  }
+}
+
+.bloque--instalaciones {
+  img {
+    height: 200px;
   }
 }
