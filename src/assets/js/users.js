@@ -1,6 +1,6 @@
+
 const fs = require('fs');
 const yaml = require('js-yaml');
-
 
 let data = {
     User: {
@@ -21,3 +21,7 @@ fs.writeFileSync('src/pages/_data/users2.yml', yamlStr, 'utf8')
 
 //Esto sirve para añadir en un fichero con datos más datos
 fs.appendFileSync('src/pages/_data/users.yml',yamlStr);
+
+//Leer el archivo
+var text = fs.readFileSync('src/pages/_data/users.yml','utf8')
+console.log (text)
