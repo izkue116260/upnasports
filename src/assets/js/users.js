@@ -1,8 +1,14 @@
+$(window).on("load", function () {
+    const fs = require('fs');
+    const yaml = require('js-yaml');
+    
+    var text = fs.readFileSync('src/pages/_data/users.yml','utf8')
+    document.getElementById("actualidad").innerHTML = "hola"
+});
 
-const fs = require('fs');
-const yaml = require('js-yaml');
 
-let data = {
+
+/*let data = {
     User: {
         name_surname: 'Ainhoa Izkue',
         user_id: 'ainhoaizkue19@gmail.com',
@@ -20,8 +26,7 @@ fs.writeFileSync('src/pages/_data/users2.yml', yamlStr, 'utf8')
 
 
 //Esto sirve para añadir en un fichero con datos más datos
-fs.appendFileSync('src/pages/_data/users.yml',yamlStr);
+fs.appendFileSync('src/pages/_data/users.yml',yamlStr);*/
 
 //Leer el archivo
-var text = fs.readFileSync('src/pages/_data/users.yml','utf8')
-console.log (text)
+
