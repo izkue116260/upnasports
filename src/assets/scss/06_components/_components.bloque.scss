@@ -36,6 +36,7 @@
 }
 
 .bloque-media {
+<<<<<<< HEAD
   padding: spacing(huge) spacing(base);
   .texto-media {
     color: $body-color;
@@ -119,3 +120,23 @@
     height: 200px;
   }
 }
+=======
+    padding: spacing(huge) spacing(base);
+    .texto-media {
+      color: $body-color;
+      @include typi("small");
+      font-weight: 300;
+    }
+    .titulo-media {
+      padding: spacing("medium") 0 spacing("tiny");
+      font-weight: bold;
+    }
+    img {
+      width: 64px;
+      height: 64px;
+    }
+    @include media($only-mobile) {
+      text-align: center;
+    }
+  }
+>>>>>>> parent of 37c8f7d... balneario, ofertas y verano

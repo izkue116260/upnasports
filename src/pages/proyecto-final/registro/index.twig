@@ -5,54 +5,64 @@
 	<!-- CONTENT HTML HERE -->
 	<section class="section o-section--large">
 		<div class="container">
-			<div class="shadow-derecha">
-				<div class="shadow-izquierda">
 
-					<h1 class="titulo titulo-marca">
-						Registro
-					</h1>
-					
-					<form>
-						<div class="form-group">
-							<label for="obligatorio" class="form-label">Nombre y Apellidos <span class="form-label--obligatorio">(necesario)</span> </label>
-							<input type="text" class="form-control" id="obligatorio" placeholder="María García López" required>
-						</div>
-
-						<div class="form-group">
-							<label for="email-tfno" class="form-label">Email ó número de teléfono <span class="form-label--obligatorio">(necesario)</span> </label>
-							<input type="text" class="form-control" id="email-tfno" placeholder="María García López" required>
-						</div>
-
-						<div class="row">
-							<div class="col-6">
-								<div class="form-group">
-									<label for="password" class="form-label">Contraseña <span class="form-label--obligatorio">(necesario)</span></label>
-									<input type="password" class="form-control" id="password" placeholder="******" required>
-								</div>
-							</div>
-							<div class="col-6">
-								<div class="form-group">
-									<label for="password" class="form-label">Repetir contraseña <span class="form-label--obligatorio">(necesario)</span></label>
-									<input type="password" class="form-control" id="password" placeholder="******">
-								</div>
-							</div>
-						</div>
-						<div class="botonera">
-							<input type="submit" value="Registrarse" alt="Registrarse" class="btn btn-primary btn--large u-text-transform-uppercase">
-								
-							<a href="../home" alt="Cancelar" class="btn btn-default btn--large u-text-transform-uppercase">
-								Cancelar
-							</a>
-						</div>
-					</form>
-					<p class="u-text-color-secondary">
-						<span>¡Error!</span> El correo electrónico o teléfono no tienen un buen formato
-					</p>
-					<p>
-						El número de teléfono o correo electrónico será su método de acceso. ¡No lo olvide!
-					</p>
+			<h1 class="titulo titulo-marca">
+				Registro
+			</h1>
+			
+			<form>
+				<div class="form-group">
+					<label for="obligatorio" class="form-label">Nombre y Apellidos <span class="form-label--obligatorio">(necesario)</span> </label>
+					<input type="text" class="form-control" id="obligatorio" placeholder="María García López" required>
 				</div>
-			</div>
+				<div class="u-margin-top-large u-margin-bottom-large">
+					<p class="u-margin-right u-padding-bottom">
+						Elija el medio de comunicación con usted (si elige ambas nos comunicaremos con usted por correo)
+					</p>
+					<a href="" alt="Teléfono" class="btn btn-secondary--brand btn--large btn-tfn u-margin-right u-text-transform-uppercase">
+						Teléfono
+					</a>
+					<a href="" alt="Correo" class="btn btn-secondary--brand btn--large btn-correo u-text-transform-uppercase">
+						Correo
+					</a>
+				</div>
+				<div class="form-group form-group--telefono u-display-none">
+					<label for="tfn" class="form-label">Teléfono<span class="form-label--obligatorio">(necesario)</span>  </label>
+					<input type="tel" class="form-control" id="tfn" placeholder="666777888">
+				</div>
+				<div class="form-group form-group--correo u-display-none">
+					<label for="email" class="form-label">Correo<span class="form-label--obligatorio">(necesario)</span>  </label>
+					<input type="email" class="form-control" id="email" placeholder="ejemplo@gmail.com">
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<div class="form-group">
+							<label for="password" class="form-label">Contraseña <span class="form-label--obligatorio">(necesario)</span></label>
+							<input type="password" class="form-control" id="password" placeholder="******" required>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="form-group">
+							<label for="password" class="form-label">Repetir contraseña <span class="form-label--obligatorio">(necesario)</span></label>
+							<input type="password" class="form-control" id="password" placeholder="******">
+						</div>
+					</div>
+				</div>
+				<div class="botonera">
+					<input type="submit" value="Registrarse" alt="Registrarse" class="btn btn-primary btn--large u-text-transform-uppercase">
+						
+					<a href="../home" alt="Cancelar" class="btn btn-default btn--large u-text-transform-uppercase">
+						Cancelar
+					</a>
+				</div>
+			</form>
+			<p class="u-text-color-secondary">
+				<span>¡Error!</span> El correo electrónico o teléfono no tienen un buen formato
+			</p>
+			<p>
+				El número de teléfono o correo electrónico será su usuario. Por lo tanto, no podrá volver a ser asignado.
+			</p>
+
 		</div>
 	</section>
 

@@ -4,52 +4,44 @@
   cursor: pointer;
   border-radius: $border-radius;
   padding: spacing(small);
-  display: inline-block;
-}
-.btn-primary {
-  color: $white !important;
-  background-color: $primary;
-  &:hover {
-    background-color: $secondary;
+  &.btn-primary {
+    color: $white !important;
+    background-color: $primary;
+    &:hover {
+      background-color: $secondary;
+    }
   }
-}
-
-.btn-default {
-  background-color: $gris-claro;
-  
-  &:hover {
-    background-color: $gris;
-  }
-}
-
-.btn-secondary {
-  background-color: $white;
-  &:hover {
+  &.btn-default {
     background-color: $gris-claro;
+    
+    &:hover {
+      background-color: $gris;
+    }
   }
-}
+  &.btn-secondary {
+    background-color: $white;
+    &:hover {
+      background-color: $gris-claro;
+    }
+  }
+  &.btn--large {
+    padding: spacing(base) spacing(large);
+    
+    @include media($only-mobile) {
+      padding: spacing(base);
+    }
+  }
 
-.btn--large {
-  padding: spacing(base) spacing(large);
+  &.btn-secondary--brand {
+    background-color: $white;
+    color: $primary;
+    border: 1px solid $primary;
+    &:hover {
+      background-color: $gris-claro;
+    }
+  }
   
-  @include media($only-mobile) {
-    padding: spacing(base);
-  }
 }
-
-.btn--width {
-  width: 100%;
-}
-
-.btn-secondary--brand {
-  background-color: $white;
-  color: $primary;
-  border: 1px solid $primary;
-  &:hover {
-    background-color: $gris-claro;
-  }
-}
-
 
 .btn-dropdown {
   .dropdown-menu {

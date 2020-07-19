@@ -1,8 +1,8 @@
 
 
 .titulo {
+    margin-top: spacing(giant);
     text-align: center;
-    padding-bottom: spacing(base);
     text-transform: uppercase;
     font-weight: bold;
     @include typi(h1);
@@ -15,26 +15,6 @@
     &.titulo-marca {
         color: $secondary;   
     }
-}
-
-.titulo-secundario {
-    padding-top: spacing(base);
-    padding-bottom: spacing(tiny);
-    @include typi(h2);
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.prohibido {
-    color: $secondary;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.permitido {
-    color: $tarifas;
-    text-transform: uppercase;
-    font-weight: bold;
 }
 
 .title {
