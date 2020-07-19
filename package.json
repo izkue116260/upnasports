@@ -20,5 +20,11 @@
     "jquery": "^3.3.1",
     "modularscale-sass": "^3.0.8",
     "typi": "^3.2.0"
+  },
+  "dependencies": {
+    "node-gyp": "^7.0.0",
+    "node-sass": "^4.14.1",
+    "popper.js": "^1.16.1",
+    "rebuild": "^0.1.2"
   }
 }
