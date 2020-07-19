@@ -1,0 +1,22 @@
+[
+  {
+    "title" : "Uso obligatorio de mascarilla",
+    "noticia" : "El uso de mascarilla será obligatorio a partir del día 17 de julio de 2020, excepto para menores de 6 años y personas con problemas respiratorios graves, que con el uso de la mascrilla pudiesen agravarse. Además, tampoco será necesaria la mascarilla en el momento del baño, en el momento de estar tomando el sol (a menos que no se cumplan los 2 metros de distancia) y a la hora de estar comiendo o bebiendo.",
+    "image" : "mascarilla.jpg"
+  },
+  {
+    "title" : "Aforo limitado",
+    "noticia" : "Para evitar contagios, el aforo de la instalación se reducirá al 75%, así como el aforo de cada una de las salas del club. A la entrada de cada una de ellas habrá un papel que informará del número de personas que podrá haber en el mismo momento en esa sala. Si el aforo se superase, las personas involucradas podrían sufrir una sanción económica.",
+    "image" : "aforo.jpg"
+  },
+  {
+    "title" : "Reformas",
+    "noticia": "Aprovechando los momentos en los que el club permaneció cerrado, se decidió adelantar las obras previstas para el año 2021. Así pues, a cada uno de los socios se le sumarán 5€ mensuales a su cobro habitual. Si quiere mas información contacte con el club.",
+    "image" : "reformas.jpg"
+  },
+  {
+    "title" : "Fútbol",
+    "noticia": "El equipo de fútbol de nuestro club ha ganado este curso el campeonato Coca Cola. Gracias a esto, el año que viene jugarán en tercera división.",
+    "image" : "futbol.jpg"
+  }
+]

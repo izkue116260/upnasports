@@ -1,11 +1,11 @@
 
 
 .titulo {
-    margin-top: spacing(giant);
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
     @include typi(h1);
+    padding-bottom: spacing(base);
 
     @include media($only-mobile) {
         margin-bottom: spacing(large);
