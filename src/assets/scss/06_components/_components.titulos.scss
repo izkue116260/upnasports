@@ -37,3 +37,10 @@
    @include typi('h4');
    margin-bottom: spacing(huge);
 }
+
+.titulo-balneario {
+    font-weight: bold;
+    @include typi('h3');
+    text-transform: uppercase;
+    text-align: center;
+}
