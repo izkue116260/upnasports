@@ -118,3 +118,11 @@
     height: 200px;
   }
 }
+
+.imagen {
+  img{
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+  }
+}

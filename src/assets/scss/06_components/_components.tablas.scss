@@ -5,7 +5,6 @@
   
       &#{$infix} {
         @include media-breakpoint-down($breakpoint) {
-          display: block;
           width: 100%;
           overflow-x: auto;
           -webkit-overflow-scrolling: touch;
@@ -21,16 +20,18 @@
 }
 
 .table {
-  width: 100%;
-  max-width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
   background-color: transparent;
-  margin-left: spacing(huge);
+  @include media($only-mobile) {
+    display: block;
+  }
 }
 
 .table--tarifas {
- 
+  caption {
+    margin-bottom: spacing(large);
+  } 
   tbody, thead {
     border: 1px solid black;
   }
@@ -41,12 +42,12 @@
     text-align: center;
   }
   tr {
-    &:nth-child(odd) {
+    &:nth-child(even) {
       background-color: $gris-oscuro;
       color: $white;
     }
     td,th{
-      padding: spacing(small) 0;
+      text-align: center;
     }
   }
 }
