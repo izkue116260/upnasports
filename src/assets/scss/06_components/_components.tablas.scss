@@ -23,6 +23,7 @@
 .table {
   width: 100%;
   max-width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   background-color: transparent;
   margin-left: spacing(huge);
@@ -30,7 +31,7 @@
 
 .table--tarifas {
  
-  tbody{
+  tbody, thead {
     border: 1px solid black;
   }
   th {
@@ -45,7 +46,7 @@
       color: $white;
     }
     td,th{
-      padding: spacing(small) spacing(huge);
+      padding: spacing(small) 0;
     }
   }
 }

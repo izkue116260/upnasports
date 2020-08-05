@@ -1,5 +1,11 @@
 .prohibido {
-    color: $secondary;
+    color: $prohibido;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.aceptado {
+    color: $aceptado;
     text-transform: uppercase;
     font-weight: bold;
 }

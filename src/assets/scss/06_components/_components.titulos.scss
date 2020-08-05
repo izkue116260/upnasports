@@ -21,6 +21,7 @@
     @include typi(h3);
     text-transform: uppercase;
     text-align: center;
+    margin-top: spacing(small);
 }
 
 .titulo--deporte {
@@ -43,4 +44,12 @@
     @include typi('h3');
     text-transform: uppercase;
     text-align: center;
+}
+
+.titulo-verano {
+    font-weight: bold;
+    @include typi('h2');
+    text-transform: uppercase;
+    margin-top: spacing(large);
+    margin-bottom: spacing(small);
 }
