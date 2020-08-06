@@ -1,5 +1,5 @@
 $(window).on("load", function () {
-    fetch('http://127.0.0.1:5000/books')
+    fetch('http://127.0.0.1:5000/actualidad')
     .then(function(response) {
         return response.json();
     })
@@ -59,7 +59,7 @@ function initialize(products) {
     // display it
     function fetchBlob(product) {
       // construct the URL path to the image file from the product.image property
-      let url = '../../assets/images/actualidad/' + product.image;
+      let url = '../../assets/images/actualidad/' + product.imagen;
       // Use fetch to fetch the image, and convert the resulting response to a blob
       // Again, if any errors occur we report them in the console.
       fetch(url).then(function(response) {
@@ -79,22 +79,31 @@ function initialize(products) {
       const section = document.createElement('section');
       const heading = document.createElement('h2');
       const noticia = document.createElement('p');
+      const div = document.createElement('div');
       const image = document.createElement('img');
   
       // Give the <h2> textContent equal to the product "name" property, but with the first character
       // replaced with the uppercase version of the first character
-      heading.textContent = product.title.replace(product.title.charAt(0), product.title.charAt(0).toUpperCase());
+      heading.textContent = product.titulo.replace(product.titulo.charAt(0), product.titulo.charAt(0).toUpperCase());
   
       noticia.textContent = product.noticia;
   
       // Set the src of the <img> element to the ObjectURL, and the alt to the product "name" property
       image.src = objectURL;
-      image.alt = product.title;
+      image.alt = product.titulo;
+
+      //Estilos y clases
+      section.classList = "u-display-flex u-margin-bottom-large "
+      image.className = "u-margin-right-large"
+      heading.classList = "titulo--secundario"
+
+      image.style = "width: 400px;"
   
       // append the elements to the DOM as appropriate, to add the product to the UI
       main.appendChild(section);
-      section.appendChild(heading);
-      section.appendChild(noticia);
+      div.appendChild(heading);
+      div.appendChild(noticia);
       section.appendChild(image);
+      section.appendChild(div);
     }
 }
