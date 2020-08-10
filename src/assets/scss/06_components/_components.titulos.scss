@@ -39,6 +39,15 @@
    margin-bottom: spacing(huge);
 }
 
+.title--actividades {
+    color: $actividades2;
+    font-weight: bold; 
+    margin-top: spacing(small);
+    @include typi('h3');
+    margin-bottom: spacing(huge);
+    text-transform: uppercase;
+ }
+
 .titulo-balneario {
     font-weight: bold;
     @include typi('h3');

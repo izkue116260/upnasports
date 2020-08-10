@@ -1,20 +1,19 @@
 $(window).on("load", function () {
-    fetch('http://127.0.0.1:5000/actualidad')
+    fetch('http://127.0.0.1:5000/actividades')
     .then(function(response) {
         return response.json();
     })
     .then(function(myJson) {
-        actualidad(myJson);
+        actividades(myJson);
     });
 })
 
 
 // sets up the app logic, declares required variables, contains all the other functions
-function actualidad(products) {
+function actividades(products) {
     // grab the UI elements that we need to manipulate
   
-    const main = document.querySelector('actualidad');
-  
+    const main = document.querySelector('actividades');
   
     // these contain the results of filtering by category, and search term
     // finalGroup will contain the products that need to be displayed after
@@ -26,7 +25,7 @@ function actualidad(products) {
     // To start with, set finalGroup to equal the entire products database
     // then run updateDisplay(), so ALL products are displayed initially.
     finalGroup = products;
-    updateDisplay();
+    updateDisplayActividades();
   
     // Set both to equal an empty array, in time for searches to be run
     finalGroup = [];
@@ -35,8 +34,8 @@ function actualidad(products) {
     // filters them by the tiered search term (if one has been entered)
   
     // start the process of updating the display with the new set of products
-    function updateDisplay() {
- 
+    function updateDisplayActividades() {
+
       // if no products match the search term, display a "No results to display" message
       if(finalGroup.length === 0) {
         const para = document.createElement('p');
@@ -45,7 +44,7 @@ function actualidad(products) {
       // for each product we want to display, pass its product object to fetchBlob()
       } else {
         for(let i = 0; i < finalGroup.length; i++) {
-          fetchBlob(finalGroup[i]);
+          fetchBlobActividades(finalGroup[i]);
         }
       }
     }
@@ -53,9 +52,9 @@ function actualidad(products) {
     // fetchBlob uses fetch to retrieve the image for that product, and then sends the
     // resulting image display URL and product object on to showProduct() to finally
     // display it
-    function fetchBlob(product) {
+    function fetchBlobActividades(product) {
       // construct the URL path to the image file from the product.image property
-      let url = '../../assets/images/actualidad/' + product.imagen;
+      let url = '../../assets/images/actividades/' + product.imagen;
       // Use fetch to fetch the image, and convert the resulting response to a blob
       // Again, if any errors occur we report them in the console.
       fetch(url).then(function(response) {
@@ -65,42 +64,42 @@ function actualidad(products) {
         // that points to an object stored inside the browser
         let objectURL = URL.createObjectURL(blob);
         // invoke showProduct
-        showProduct(objectURL, product);
+        showProductActividades(objectURL, product);
       });
     }
   
     // Display a product inside the <main> element
-    function showProduct(objectURL, product) {
+    function showProductActividades(objectURL, product) {
       // create <section>, <h2>, <p>, and <img> elements
+      const actividad = document.createElement('section');
+      const deporte = document.createElement('section');
       const section = document.createElement('section');
       const heading = document.createElement('h2');
-      const noticia = document.createElement('p');
-      const div = document.createElement('div');
       const image = document.createElement('img');
   
       // Give the <h2> textContent equal to the product "name" property, but with the first character
       // replaced with the uppercase version of the first character
-      heading.textContent = product.titulo.replace(product.titulo.charAt(0), product.titulo.charAt(0).toUpperCase());
-  
-      noticia.textContent = product.noticia;
-  
+      heading.textContent = product.nombre.replace(product.nombre.charAt(0), product.nombre.charAt(0).toUpperCase());
+    
       // Set the src of the <img> element to the ObjectURL, and the alt to the product "name" property
       image.src = objectURL;
-      image.alt = product.titulo;
+      image.alt = product.nombre;
 
       //Estilos y clases
-      section.classList = "u-display-flex u-margin-bottom-large "
-      image.className = "u-margin-right-large"
-      heading.classList = "titulo--secundario"
+      main.classList = "row"
+      section.classList = "col-sm-4"
+      heading.classList = "title--actividades"
 
-      image.style = "width: 400px;"
+      image.style = "height: 200px;"
+
+      main.appendChild(section);
+      // if(product.tipo === 'actividad') {
+      //   actividad.appendChild()
+      // }
   
       // append the elements to the DOM as appropriate, to add the product to the UI
-      
-      main.appendChild(section);
-      div.appendChild(heading);
-      div.appendChild(noticia);
+     
       section.appendChild(image);
-      section.appendChild(div);
+      section.appendChild(heading);
     }
 }
