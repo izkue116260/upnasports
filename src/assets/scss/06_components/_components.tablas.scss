@@ -28,6 +28,38 @@
   }
 }
 
+.table--reservas {
+  margin-top: spacing(large);
+  thead, tr {
+    th,td:first-child {
+      color: black;
+      @include typi('base');
+      text-transform: uppercase;
+    }
+  }
+  th,td {
+    border: 1px solid $gris-oscuro;
+    padding: spacing(small);
+    text-align: center;
+    @include typi('small');
+    cursor: pointer;
+  }
+  tr {
+    color: $gris-oscuro;
+    .ocupado {
+      color: $secondary;
+      font-weight: bold;
+    }
+    &.tachado {
+      background-color: $gris-oscuro;
+      td:first-child {
+        background-color: white;
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
 .table--tarifas {
   caption {
     margin-bottom: spacing(large);
