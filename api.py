@@ -13,7 +13,6 @@ def dict_factory(cursor, row):
     d = {}
     for idx, col in enumerate(cursor.description):
         d[col[0]] = row[idx]
-    print(d)
     return d
 
 ## Devuelve la base de datos de actualidad
@@ -33,7 +32,16 @@ def api_all_actividades():
     conn = sqlite3.connect('actividades.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
-    all_books = cur.execute('SELECT * FROM actividades;').fetchall()
+    all_actividades = cur.execute('SELECT * FROM actividades;').fetchall()
+    return jsonify(all_actividades)
+
+@app.route('/reservas', methods=['GET'])
+def api_all_reservas():
+    
+    conn = sqlite3.connect('reservas.db')
+    conn.row_factory = dict_factory
+    cur = conn.cursor()
+    all_books = cur.execute('SELECT * FROM reservas;').fetchall()
     return jsonify(all_books)
 
 ## Para ejecutar la apliacion
