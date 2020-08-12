@@ -64,24 +64,25 @@ function reservas(products) {
   // Display a product inside the <main> element
   function showProduct(product) {
     const hora = document.getElementById(product.hora).nextElementSibling;
-    let lugar = document.getElementById(product.lugar);
+    let lugar = document.getElementById(product.lugar).innerHTML;
+    console.log(lugar)
     switch (lugar){
-      case "padel1": 
+      case "Padel 1": 
         lugar = 0;
         break;
-      case "padel2": 
+      case "Padel 2": 
         lugar = 1;
         break;
-      case "padel3": 
+      case "Padel 3": 
         lugar = 2;
         break;
-      case "tenis1": 
+      case "Tenis 1": 
         lugar = 3;
         break;
-      case "tenis2": 
+      case "Tenis 2": 
         lugar = 4;
         break;
-      case "trinquete": 
+      case "Trinquete": 
         lugar = 5;
         break;
       default: 
@@ -89,14 +90,10 @@ function reservas(products) {
         break;
     }
     let ocupado = hora;
-    for(let i = 0; i < lugar-1; i++) {
+    for(let i = 0; i < lugar; i++) {
       ocupado = ocupado.nextElementSibling;
     }
     ocupado.innerHTML = "Ocupado"
     ocupado.className = "ocupado"
-    console.log(hora)
-    // create <section>, <h2>, <p>, and <img> elements
-    console.log(product.hora)
-
   }
 }
