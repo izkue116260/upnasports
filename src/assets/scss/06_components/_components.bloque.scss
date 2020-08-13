@@ -73,6 +73,8 @@
   border: 1px solid $gris-oscuro;
   color: $gris-oscuro;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   
   div {
     padding: spacing(base);
