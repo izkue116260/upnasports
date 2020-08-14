@@ -1,11 +1,10 @@
 
  $('.reservar').click(function () {
-  $(this).toggleClass('ocupado');
-  if(this.innerHTML === "Reservar") {
-    this.innerHTML = "Ocupado"
-  } else {
-    this.innerHTML = "Reservar"
-  }
+  $(this).addClass('ocupado');
+  let horaReserva = this.parentElement.firstElementChild.id;
+  console.log("La reserva es a las",horaReserva)
+  this.innerHTML = "Ocupado"
+
 })
 
 
@@ -65,7 +64,6 @@ function reservas(products) {
   function showProduct(product) {
     const hora = document.getElementById(product.hora).nextElementSibling;
     let lugar = document.getElementById(product.lugar).innerHTML;
-    console.log(lugar)
     switch (lugar){
       case "Padel 1": 
         lugar = 0;
