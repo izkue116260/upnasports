@@ -10,7 +10,7 @@
     lugarReservaPosition++;
   }
 
-  switch (lugarReserva){
+  switch (lugarReservaPosition){
     case 0: 
       lugarReserva = "Padel 1";
       break;
@@ -60,15 +60,11 @@ function reservas(products) {
   let finalGroup;
 
   finalGroup = products;
+
   updateDisplay();
 
-  // Set both to equal an empty array, in time for searches to be run
   finalGroup = [];
-  
-  // selectProducts() Takes the group of products selected by selectCategory(), and further
-  // filters them by the tiered search term (if one has been entered)
 
-  // start the process of updating the display with the new set of products
   function updateDisplay() {
       for(let i = 0; i < finalGroup.length; i++) {
         if (finalGroup[i].admitida === "si"){ 
