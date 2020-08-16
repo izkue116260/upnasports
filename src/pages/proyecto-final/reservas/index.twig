@@ -138,7 +138,24 @@
 							</tr>
 						</tbody>
 					</table>
-					
+					<div id="modal" class="u-display-none">
+						<div class="w3-modal-content">
+							<div class="w3-container">
+								<span onclick="abrirModal()" class="cerrar-modal">&times;</span>
+								<p>Añade tu id de usuario</p>
+								<form>
+									<div class="form-group">
+										<label for="id-usuario" class="form-label">Número de usuario: </label>
+										<input type="number" class="form-control" id="id-usuario" name="id-usuario" required>
+									</div>
+									<button onclick="abrirModal()" class="btn btn-primary">
+										Reservar
+									</button>
+								</form>
+								
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

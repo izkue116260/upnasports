@@ -1,6 +1,5 @@
 
  $('.reservar').click(function () {
-  $(this).addClass('ocupado');
   const horaReserva = this.parentElement.firstElementChild.id;
   let lugarReserva = 0;
 
@@ -32,10 +31,19 @@
       break;
   }
   console.log("La reserva es a las",horaReserva," y el lugar ", lugarReserva)
-  this.innerHTML = "Ocupado"
-
+  if(this.innerHTML === "Reservar") {
+    this.innerHTML = "Ocupado"
+  } else {
+    this.innerHTML = "Reservar"
+  }
+  $(this).toggleClass('ocupado');
+  abrirModal()
+  
 })
 
+function abrirModal() {
+  $('#modal').toggleClass("u-display-none")
+}
 
 $(window).on("load", function () {
   fetch('http://127.0.0.1:5000/reservas')

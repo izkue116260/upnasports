@@ -1,0 +1,33 @@
+#modal {
+  z-index: 3;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  &::after, &::before {
+    content:"";
+    clear:both
+  }
+}
+
+.w3-modal-content {
+  vertical-align: middle;
+  margin:auto;
+  background-color:#fff;
+  position:relative;
+  padding:spacing(base);
+  outline:0;
+  width:600px;
+  margin-top: 500px;
+}
+
+.cerrar-modal {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  padding: spacing(small);
+}
