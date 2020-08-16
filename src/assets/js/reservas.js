@@ -1,5 +1,6 @@
 
  $('.reservar').click(function () {
+  abrirModal()
   const horaReserva = this.parentElement.firstElementChild.id;
   let lugarReserva = 0;
 
@@ -30,14 +31,10 @@
       lugarReserva = "Trinquete";
       break;
   }
+  //let idUsuario =  document.getElementsByName("id-usuario").value;
   console.log("La reserva es a las",horaReserva," y el lugar ", lugarReserva)
-  if(this.innerHTML === "Reservar") {
-    this.innerHTML = "Ocupado"
-  } else {
-    this.innerHTML = "Reservar"
-  }
-  $(this).toggleClass('ocupado');
-  abrirModal()
+  this.innerHTML = "Ocupado"
+  $(this).addClass('ocupado');
   
 })
 
