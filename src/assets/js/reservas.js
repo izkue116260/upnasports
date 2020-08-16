@@ -55,7 +55,9 @@ function reservas(products) {
     // for each product we want to display, pass its product object to fetchBlob()
     } else {
       for(let i = 0; i < finalGroup.length; i++) {
-        showProduct(finalGroup[i]);
+        if (finalGroup[i].admitida === "si"){ 
+          showProduct(finalGroup[i]);
+        }
       }
     }
   }
