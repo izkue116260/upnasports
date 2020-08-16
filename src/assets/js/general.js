@@ -10,15 +10,24 @@ $(window).on("load", function () {
   });
 
   $("#rango-edad").change(function () {
-    if ($(this).val() == 1) {
+    if ($(this).val() == 0) {
+      $(".bloque--vacio").removeClass("u-display-none");
+      $(".bloque--tres-cinco").addClass("u-display-none");
+      $(".bloque--seis-ocho").addClass("u-display-none");
+      $(".bloque--nueve-trece").addClass("u-display-none");
+    }
+    else if ($(this).val() == 1) {
+      $(".bloque--vacio").addClass("u-display-none");
       $(".bloque--tres-cinco").removeClass("u-display-none");
       $(".bloque--seis-ocho").addClass("u-display-none");
       $(".bloque--nueve-trece").addClass("u-display-none");
     } else if ($(this).val() == 2) {
+      $(".bloque--vacio").addClass("u-display-none");
       $(".bloque--tres-cinco").addClass("u-display-none");
       $(".bloque--seis-ocho").removeClass("u-display-none");
       $(".bloque--nueve-trece").addClass("u-display-none");
     } else {
+      $(".bloque--vacio").addClass("u-display-none");
       $(".bloque--tres-cinco").addClass("u-display-none");
       $(".bloque--seis-ocho").addClass("u-display-none");
       $(".bloque--nueve-trece").removeClass("u-display-none");
