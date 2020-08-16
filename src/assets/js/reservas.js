@@ -1,8 +1,37 @@
 
  $('.reservar').click(function () {
   $(this).addClass('ocupado');
-  let horaReserva = this.parentElement.firstElementChild.id;
-  console.log("La reserva es a las",horaReserva)
+  const horaReserva = this.parentElement.firstElementChild.id;
+  let lugarReserva = 0;
+
+  while(this.previousElementSibling.id !== horaReserva) {
+    lugarReserva++;
+  }
+
+  switch (lugarReserva){
+    case 0: 
+      lugarReserva = "Padel 1";
+      break;
+    case 1: 
+      lugarReserva = "Padel 2";
+      break;
+    case 2: 
+      lugarReserva = "Padel 3";
+      break;
+    case 3: 
+      lugarReserva = "Tenis 1";
+      break;
+    case 4: 
+      lugarReserva = "Tenis 2";
+      break;
+    case 5: 
+      lugarReserva = "Trinquete";
+      break;
+    default: 
+      lugarReserva = "Trinquete";
+      break;
+  }
+  console.log("La reserva es a las",horaReserva," y el lugar ", lugarReserva)
   this.innerHTML = "Ocupado"
 
 })
