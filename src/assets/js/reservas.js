@@ -1,3 +1,8 @@
+const DIA_EN_MILISEGUNDOS = 24 * 60 * 60 * 1000;
+const hoy = new Date();
+const mañana = new Date(hoy.getTime() + DIA_EN_MILISEGUNDOS);
+const pasadoMañana = new Date(hoy.getTime() + 2*DIA_EN_MILISEGUNDOS);
+let diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
 
  $('.reservar').click(function () {
   abrirModal()
@@ -35,8 +40,6 @@
   }
   //let idUsuario =  document.getElementsByName("id-usuario").value;
   console.log("La reserva es a las",horaReserva," y el lugar ",lugarReserva)
-  this.innerHTML = "Ocupado"
-  $(this).addClass('ocupado');
   
 })
 
@@ -45,6 +48,10 @@ function abrirModal() {
 }
 
 $(window).on("load", function () {
+  document.getElementById("primero").innerHTML = diasSemana[hoy.getDay()] + " " + hoy.getDate()
+  document.getElementById("segundo").innerHTML = diasSemana[mañana.getDay()] + " " + (mañana.getDate())
+  document.getElementById("tercero").innerHTML = diasSemana[pasadoMañana.getDay()] + " " + (pasadoMañana.getDate())
+
   fetch('http://127.0.0.1:5000/reservas')
   .then(function(response) {
       return response.json();

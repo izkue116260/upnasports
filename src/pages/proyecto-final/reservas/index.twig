@@ -17,14 +17,14 @@
 						verifique su id de usuario y entonces, aparecerá su fecha como ocupada.
 					</p>
 					<div class="bloque--reservas">
-						<button class="primero activated">
-							Martes 19
+						<button id="primero" class="activated">
+							
 						</button>
-						<button class="segundo">
-							Miércoles 20
+						<button id="segundo">
+							
 						</button>
-						<button class="tercero">
-							Jueves 21
+						<button id="tercero">
+							
 						</button>
 					</div>
 					<table class="table table-responsive table--reservas">
@@ -142,20 +142,20 @@
 						</tbody>
 					</table>
 					<div id="modal" class="u-display-none">
-						<div class="w3-modal-content">
-							<div class="w3-container">
-								<span onclick="abrirModal()" class="cerrar-modal">&times;</span>
-								<p>Añade tu id de usuario</p>
-								<form>
-									<div class="form-group">
-										<label for="id-usuario" class="form-label">Número de usuario: </label>
-										<input type="number" class="form-control" id="id-usuario" name="id-usuario" required>
-									</div>
-									<input type="submit" value="Reservar" class="btn btn-primary">
-								</form>
-								
-							</div>
+						<div class="contenido-modal">
+							<span  class="cerrar-modal">&times;</span>
+							<p>Añade tu id de usuario</p>
+							<form>
+								<div class="form-group">
+									<label for="id-usuario" class="form-label">Número de usuario: </label>
+									<input type="number" class="form-control" id="id-usuario" name="id-usuario" required>
+								</div>
+								<input type="submit" value="Reservar" class="btn btn-primary">
+								<button type="button" onclick="abrirModal()" class="btn btn-default">Cancelar</button>
+							</form>	
+							
 						</div>
+						
 					</div>
 				</div>
 			</div>

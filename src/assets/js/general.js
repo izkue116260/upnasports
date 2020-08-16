@@ -34,24 +34,24 @@ $(window).on("load", function () {
     }
   });
 
-  $(".bloque--reservas .primero").on("click", function (e) {
+  $("#primero").on("click", function (e) {
     e.preventDefault();
     $(this).addClass("activated");
-    $(".bloque--reservas .segundo").removeClass("activated");
-    $(".bloque--reservas .tercero").removeClass("activated");
+    $("#segundo").removeClass("activated");
+    $("#tercero").removeClass("activated");
   });
 
-  $(".bloque--reservas .segundo").on("click", function (e) {
+  $("#segundo").on("click", function (e) {
     e.preventDefault();
     $(this).addClass("activated");
-    $(".bloque--reservas .primero").removeClass("activated");
-    $(".bloque--reservas .tercero").removeClass("activated");
+    $("#primero").removeClass("activated");
+    $("#tercero").removeClass("activated");
   });
 
-  $(".bloque--reservas .tercero").on("click", function (e) {
+  $("#tercero").on("click", function (e) {
     e.preventDefault();
     $(this).addClass("activated");
-    $(".bloque--reservas .segundo").removeClass("activated");
-    $(".bloque--reservas .primero").removeClass("activated");
+    $("#segundo").removeClass("activated");
+    $("#primero").removeClass("activated");
   });
 });
