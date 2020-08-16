@@ -2,10 +2,12 @@
  $('.reservar').click(function () {
   abrirModal()
   const horaReserva = this.parentElement.firstElementChild.id;
-  let lugarReserva = 0;
+  let lugarReserva = this;
+  let lugarReservaPosition = 0;
 
-  while(this.previousElementSibling.id !== horaReserva) {
-    lugarReserva++;
+  while(lugarReserva.previousElementSibling.id !== horaReserva) {
+    lugarReserva = lugarReserva.previousElementSibling;
+    lugarReservaPosition++;
   }
 
   switch (lugarReserva){
@@ -32,7 +34,7 @@
       break;
   }
   //let idUsuario =  document.getElementsByName("id-usuario").value;
-  console.log("La reserva es a las",horaReserva," y el lugar ", lugarReserva)
+  console.log("La reserva es a las",horaReserva," y el lugar ",lugarReserva)
   this.innerHTML = "Ocupado"
   $(this).addClass('ocupado');
   
@@ -55,20 +57,8 @@ $(window).on("load", function () {
 
 // sets up the app logic, declares required variables, contains all the other functions
 function reservas(products) {
-  // grab the UI elements that we need to manipulate
-
-  const main = document.querySelector('actualidad');
-
-
-  // these contain the results of filtering by category, and search term
-  // finalGroup will contain the products that need to be displayed after
-  // the searching has been done. Each will be an array containing objects.
-  // Each object will represent a product
-
   let finalGroup;
 
-  // To start with, set finalGroup to equal the entire products database
-  // then run updateDisplay(), so ALL products are displayed initially.
   finalGroup = products;
   updateDisplay();
 
@@ -80,21 +70,12 @@ function reservas(products) {
 
   // start the process of updating the display with the new set of products
   function updateDisplay() {
-
-    // if no products match the search term, display a "No results to display" message
-    if(finalGroup.length === 0) {
-      const para = document.createElement('p');
-      para.textContent = 'No results to display!';
-      main.appendChild(para);
-    // for each product we want to display, pass its product object to fetchBlob()
-    } else {
       for(let i = 0; i < finalGroup.length; i++) {
         if (finalGroup[i].admitida === "si"){ 
           showProduct(finalGroup[i]);
         }
       }
     }
-  }
 
   // Display a product inside the <main> element
   function showProduct(product) {
