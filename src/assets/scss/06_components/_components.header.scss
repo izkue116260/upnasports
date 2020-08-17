@@ -61,6 +61,7 @@
 }
 
 .pre-header {
+  height: 70px;
   background-color: $primary;
   background-image: url('../images/logo.png');
   background-repeat: no-repeat;
@@ -72,6 +73,11 @@
   text-align: end;
   .btn {
     margin: spacing(small);
+  }
+  .home {
+    float: left;
+    margin-left: spacing(superhero);
+    color: transparent;
   }
 }
 
