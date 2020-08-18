@@ -20,31 +20,31 @@ let diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Vie
 
   switch (lugarReservaPosition){
     case 0: 
-      lugarReserva = "Padel 1";
+      lugarReserva = "padel1";
       break;
     case 1: 
-      lugarReserva = "Padel 2";
+      lugarReserva = "padel2";
       break;
     case 2: 
-      lugarReserva = "Padel 3";
+      lugarReserva = "padel3";
       break;
     case 3: 
-      lugarReserva = "Tenis 1";
+      lugarReserva = "tenis1";
       break;
     case 4: 
-      lugarReserva = "Tenis 2";
+      lugarReserva = "tenis2";
       break;
     case 5: 
-      lugarReserva = "Trinquete";
+      lugarReserva = "trinquete";
       break;
     default: 
-      lugarReserva = "Trinquete";
+      lugarReserva = "trinquete";
       break;
   }
-  //let idUsuario =  document.getElementsByName("id-usuario").value;
+  let idUsuario =  document.getElementsByName("id-usuario").value;
   console.log("La reserva es a las",horaReserva," y el lugar ",lugarReserva)
   
-  var data = { dia: '23', hora: '10', lugar: 'Padel 1', id_usuario: "1234", admitida: 'no' };
+  var data = { dia: '23', hora: horaReserva, lugar: lugarReserva, idUsuario: "1234", admitida: 'no' };
   let url = 'http://127.0.0.1:5000/formulario-reservas'
   fetch(url, {
     method: 'POST',
@@ -52,7 +52,7 @@ let diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Vie
     headers:{
       'Content-Type': 'application/json'
     },
-    mode: 'no-cors'
+    mode: 'cors'
   }).then(res => res.json())
   .catch(error => console.error('Error:',error))
   .then(response => console.log('Success:',response));

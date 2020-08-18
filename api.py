@@ -45,14 +45,14 @@ def api_all_reservas():
 @app.route('/formulario-reservas', methods=['POST'])
 def api_formulario_reservas():
     reserva = request.get_json()
-    sql = '''INSERT into reservas (dia,hora,lugar,idUsuario,admitida) VALUES ('28','10','padel1','1234','si')'''
-    print("hola")
+    sql = "INSERT into reservas (dia,hora,lugar,idUsuario,admitida) VALUES (?,?,?,?,?)"
+    valores = (reserva["dia"],reserva["hora"],reserva["lugar"],reserva["idUsuario"],reserva["admitida"])
     conn = sqlite3.connect('reservas.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
-    cur.execute(sql)
+    cur.execute(sql,valores)
     conn.commit()
-    print("adios ",request)
+    return reserva
 
 ## Para ejecutar la apliacion
 app.run()
