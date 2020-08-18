@@ -41,6 +41,18 @@ let diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Vie
   //let idUsuario =  document.getElementsByName("id-usuario").value;
   console.log("La reserva es a las",horaReserva," y el lugar ",lugarReserva)
   
+  var data = { dia: '23', hora: '10', lugar: 'Padel 1', id_usuario: "1234", admitida: 'no' };
+  let url = 'http://127.0.0.1:5000/formulario-reservas'
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers:{
+      'Content-Type': 'application/json'
+    },
+    mode: 'no-cors'
+  }).then(res => res.json())
+  .catch(error => console.error('Error:',error))
+  .then(response => console.log('Success:',response));
 })
 
 function abrirModal() {
@@ -60,7 +72,6 @@ $(window).on("load", function () {
     reservas(myJson);
   });
 })
-
 
 // sets up the app logic, declares required variables, contains all the other functions
 function reservas(products) {

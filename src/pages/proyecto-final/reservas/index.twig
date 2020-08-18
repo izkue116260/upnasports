@@ -143,16 +143,16 @@
 					</table>
 					<div id="modal" class="u-display-none">
 						<div class="contenido-modal">
-							<span  class="cerrar-modal">&times;</span>
+							<span onclick="abrirModal()"  class="cerrar-modal">&times;</span>
 							<p>Añade tu id de usuario</p>
 							<form>
 								<div class="form-group">
 									<label for="id-usuario" class="form-label">Número de usuario: </label>
 									<input type="number" class="form-control" id="id-usuario" name="id-usuario" required>
 								</div>
-								<input type="submit" value="Reservar" class="btn btn-primary">
-								<button type="button" onclick="abrirModal()" class="btn btn-default">Cancelar</button>
 							</form>	
+							<button class="btn btn-primary">Reservar</button>
+							<button type="button" onclick="abrirModal()" class="btn btn-default">Cancelar</button>
 							
 						</div>
 						
