@@ -5,7 +5,10 @@ const pasadoMañana = new Date(hoy.getTime() + 2*DIA_EN_MILISEGUNDOS);
 let diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
 
  $('.reservar').click(function () {
-  abrirModal()
+  if(this.innerHTML === "Reservar"){
+    abrirModal()
+  }  
+  
   const horaReserva = this.parentElement.firstElementChild.id;
   let lugarReserva = this;
   let lugarReservaPosition = 0;
