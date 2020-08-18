@@ -49,18 +49,23 @@ let lugar = ""
 })
 
 $('#boton-reserva').click(function () {
-  var data = { dia: '23', hora: hora, lugar: lugar, idUsuario: "1234", admitida: 'no' };
-  let url = 'http://127.0.0.1:5000/formulario-reservas'
-  fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers:{
-      'Content-Type': 'application/json'
-    },
-    mode: 'cors'
-  }).then(res => res.json())
-  .catch(error => console.error('Error:',error))
-  .then(response => console.log('Success:',response));
+  if(document.getElementById("id-usuario").value === "") {
+    document.getElementById("error-formulario").innerHTML = "Debe introducir un id de usuario"
+  } else {
+    var data = { dia: '23', hora: hora, lugar: lugar, idUsuario: document.getElementById("id-usuario").value , admitida: 'si' };
+    let url = 'http://127.0.0.1:5000/formulario-reservas'
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      mode: 'cors'
+    }).then(res => res.json())
+    .catch(error => console.error('Error:',error))
+    .then(response => console.log('Success:',response));
+    location.reload()
+  }
 })
 
 function abrirModal() {
