@@ -6,49 +6,52 @@ const pasadoMañana = new Date(hoy.getTime() + 2*DIA_EN_MILISEGUNDOS);
 let diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
 let hora = ""
 let lugar = ""
-let dia = hoy.getDate()+"/"+hoy.getMonth()+"/"+hoy.getFullYear();
+let dia = ""
 
 //Funciones
 $('.reservar').click(function () {
-  if(this.innerHTML === "Reservar"){
-    abrirModal()
-  }  
-  const horaReserva = this.parentElement.firstElementChild.id;
-  let lugarReserva = this;
-  let lugarReservaPosition = 0;
+  if(dia !== ""){
+    if(this.innerHTML === "Reservar"){
+      abrirModal()
+    }  
+    const horaReserva = this.parentElement.firstElementChild.id;
+    let lugarReserva = this;
+    let lugarReservaPosition = 0;
 
-  while(lugarReserva.previousElementSibling.id !== horaReserva) {
-    lugarReserva = lugarReserva.previousElementSibling;
-    lugarReservaPosition++;
-  }
+    while(lugarReserva.previousElementSibling.id !== horaReserva) {
+      lugarReserva = lugarReserva.previousElementSibling;
+      lugarReservaPosition++;
+    }
 
-  switch (lugarReservaPosition){
-    case 0: 
-      lugarReserva = "padel1";
-      break;
-    case 1: 
-      lugarReserva = "padel2";
-      break;
-    case 2: 
-      lugarReserva = "padel3";
-      break;
-    case 3: 
-      lugarReserva = "tenis1";
-      break;
-    case 4: 
-      lugarReserva = "tenis2";
-      break;
-    case 5: 
-      lugarReserva = "trinquete";
-      break;
-    default: 
-      lugarReserva = "trinquete";
-      break;
+    switch (lugarReservaPosition){
+      case 0: 
+        lugarReserva = "padel1";
+        break;
+      case 1: 
+        lugarReserva = "padel2";
+        break;
+      case 2: 
+        lugarReserva = "padel3";
+        break;
+      case 3: 
+        lugarReserva = "tenis1";
+        break;
+      case 4: 
+        lugarReserva = "tenis2";
+        break;
+      case 5: 
+        lugarReserva = "trinquete";
+        break;
+      default: 
+        lugarReserva = "trinquete";
+        break;
+    }
+    //let idUsuario =  document.getElementsByName("id-usuario").value;
+    hora = horaReserva
+    lugar = lugarReserva
+  } else {
+    document.getElementById("elija-fecha").innerHTML = "Elija una fecha"
   }
-  //let idUsuario =  document.getElementsByName("id-usuario").value;
-  console.log("La reserva es a las",horaReserva," y el lugar ",lugarReserva)
-  hora = horaReserva
-  lugar = lugarReserva
 })
 
 $('#boton-reserva').click(function () {
@@ -73,6 +76,7 @@ $('#boton-reserva').click(function () {
 
 function abrirModal() {
   $('#modal').toggleClass("u-display-none")
+  document.getElementById("error-formulario").innerHTML = ""
 }
 
 function cambiaAHoy() {
@@ -94,10 +98,12 @@ $(window).on("load", function () {
 })
 
 $(".bloque--reservas button").on("click", function () {
-  let a = document.getElementsByClassName("ocupado").length
-  for(let i = 0; i < a; i++) {
+  document.getElementById("elija-fecha").innerHTML = ""
+  for(let i = 0; i < document.getElementsByClassName("ocupado").length; i++) {
     document.getElementsByClassName("ocupado")[i].innerHTML = "Reservar"
   }
+
+  document.getElementsByClassName("ocupado").className = "reservar"
 
   fetch('http://127.0.0.1:5000/reservas')
   .then(function(response) {
@@ -118,7 +124,6 @@ function reservas(products,diaActual) {
   function updateDisplay() {
     for(let i = 0; i < finalGroup.length; i++) {
       if (finalGroup[i].admitida === "si" && diaActual === finalGroup[i].dia){ 
-        console.log(finalGroup)
         showProduct(finalGroup[i]);
       }
     }

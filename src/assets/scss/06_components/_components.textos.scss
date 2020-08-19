@@ -14,3 +14,12 @@
     color: $prohibido;
     font-style: italic;
 }
+
+.elija-fecha {
+    text-align: center;
+    @include typi("h2");
+    text-transform: uppercase;
+    color: $prohibido;
+    padding-bottom: spacing(base);
+    font-weight: bold;
+}
