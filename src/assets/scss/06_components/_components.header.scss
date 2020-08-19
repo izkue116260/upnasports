@@ -63,14 +63,6 @@
 .pre-header {
   height: 70px;
   background-color: $primary;
-  background-image: url('../images/logo.png');
-  background-repeat: no-repeat;
-  
-  background-position-x: spacing(giant);
-  //background: $primary url('../images/logo.png') no-repeat spacing(base);
-  background-size: contain;
-  padding: spacing(base);
-  text-align: end;
   .btn {
     margin: spacing(small);
   }
@@ -78,6 +70,9 @@
     float: left;
     margin-left: spacing(superhero);
     color: transparent;
+    img {
+      height: 70px;
+    }
   }
 }
 
