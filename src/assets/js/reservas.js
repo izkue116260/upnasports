@@ -98,12 +98,10 @@ $(window).on("load", function () {
 })
 
 $(".bloque--reservas button").on("click", function () {
-  document.getElementById("elija-fecha").innerHTML = ""
-  for(let i = 0; i < document.getElementsByClassName("ocupado").length; i++) {
-    document.getElementsByClassName("ocupado")[i].innerHTML = "Reservar"
-  }
-
-  document.getElementsByClassName("ocupado").className = "reservar"
+  document.querySelectorAll(".ocupado").forEach(elem => {
+    elem.innerHTML = "Reservar"
+    elem.className = "reservar"
+  })
 
   fetch('http://127.0.0.1:5000/reservas')
   .then(function(response) {
