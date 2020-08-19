@@ -67,15 +67,15 @@ function abrirModal() {
 
 //Funciones para cambiar la fecha
 function cambiaAHoy() {
-  dia = hoy.getDate()+"/"+hoy.getMonth()+"/"+hoy.getFullYear();
+  dia = hoy.getDate()+"/"+(hoy.getMonth())+"/"+hoy.getFullYear();
 }
 
 function cambiaAManana() {
-  dia = mañana.getDate()+"/"+mañana.getMonth()+"/"+mañana.getFullYear();
+  dia = mañana.getDate()+"/"+(mañana.getMonth())+"/"+mañana.getFullYear();
 }
 
 function cambiaAPasado() {
-  dia = pasadoMañana.getDate()+"/"+pasadoMañana.getMonth()+"/"+pasadoMañana.getFullYear();
+  dia = pasadoMañana.getDate()+"/"+(pasadoMañana.getMonth())+"/"+pasadoMañana.getFullYear();
 }
 
 //Al cargar la página ponemos los días

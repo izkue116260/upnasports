@@ -1,6 +1,7 @@
 import flask
 from flask import request, jsonify 
 from flask_cors import CORS, cross_origin
+from datetime import date
 import sqlite3
 
 # Crea un objeto flask que contiene data y metodos de la aplicacion
@@ -36,10 +37,13 @@ def api_all_actividades():
 ## Devuelve la base de datos de reservas
 @app.route('/reservas', methods=['GET'])
 def api_all_reservas():
+    # fecha = format(date.today().day)+"/"+format(date.today().month-1)+"/"+ format(date.today().year)
     conn = sqlite3.connect('reservas.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
-    all_reservas = cur.execute('SELECT * FROM reservas;').fetchall()
+    all_reservas = cur.execute('SELECT * FROM reservas').fetchall()
+    # all_reservas = cur.execute('SELECT * FROM reservas where dia = ?',(fecha, )).fetchall()
+    
     return jsonify(all_reservas)
 
 @app.route('/formulario-reservas', methods=['POST'])
