@@ -1,9 +1,11 @@
-//Variables globales
+//Variables globales para fecha
 const DIA_EN_MILISEGUNDOS = 24 * 60 * 60 * 1000;
 const hoy = new Date();
 const mañana = new Date(hoy.getTime() + DIA_EN_MILISEGUNDOS);
 const pasadoMañana = new Date(hoy.getTime() + 2*DIA_EN_MILISEGUNDOS);
 let diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+
+//Variables globales
 let hora = ""
 let lugar = ""
 let dia = ""
@@ -14,39 +16,20 @@ $('.reservar').click(function () {
     if(this.innerHTML === "Reservar"){
       abrirModal()
     }  
+    //Calcula hora
     const horaReserva = this.parentElement.firstElementChild.id;
-    let lugarReserva = this;
+
+    //Calcula lugar
     let lugarReservaPosition = 0;
+    let lugares = ["padel1","padel2","padel3","tenis1","tenis2","trinquete"];
 
     while(lugarReserva.previousElementSibling.id !== horaReserva) {
       lugarReserva = lugarReserva.previousElementSibling;
       lugarReservaPosition++;
     }
 
-    switch (lugarReservaPosition){
-      case 0: 
-        lugarReserva = "padel1";
-        break;
-      case 1: 
-        lugarReserva = "padel2";
-        break;
-      case 2: 
-        lugarReserva = "padel3";
-        break;
-      case 3: 
-        lugarReserva = "tenis1";
-        break;
-      case 4: 
-        lugarReserva = "tenis2";
-        break;
-      case 5: 
-        lugarReserva = "trinquete";
-        break;
-      default: 
-        lugarReserva = "trinquete";
-        break;
-    }
-    //let idUsuario =  document.getElementsByName("id-usuario").value;
+    lugarReserva = lugares[lugarReservaPosition]
+    //Asignamos a variables globales
     hora = horaReserva
     lugar = lugarReserva
   } else {
@@ -58,8 +41,11 @@ $('#boton-reserva').click(function () {
   if(document.getElementById("id-usuario").value === "") {
     document.getElementById("error-formulario").innerHTML = "Debe introducir un id de usuario"
   } else {
+    //Info para envio a la base de datos
     var reserva = { dia: dia, hora: hora, lugar: lugar, idUsuario: document.getElementById("id-usuario").value , admitida: 'si' };
     let url = 'http://127.0.0.1:5000/formulario-reservas'
+    
+    //Envío a la base de datos
     fetch(url, {
       method: 'POST',
       body: JSON.stringify(reserva),
@@ -79,6 +65,7 @@ function abrirModal() {
   document.getElementById("error-formulario").innerHTML = ""
 }
 
+//Funciones para cambiar la fecha
 function cambiaAHoy() {
   dia = hoy.getDate()+"/"+hoy.getMonth()+"/"+hoy.getFullYear();
 }
@@ -91,6 +78,7 @@ function cambiaAPasado() {
   dia = pasadoMañana.getDate()+"/"+pasadoMañana.getMonth()+"/"+pasadoMañana.getFullYear();
 }
 
+//Al cargar la página ponemos los días
 $(window).on("load", function () {
   document.getElementById("primero").innerHTML = diasSemana[hoy.getDay()] + " " + hoy.getDate()
   document.getElementById("segundo").innerHTML = diasSemana[mañana.getDay()] + " " + (mañana.getDate())
