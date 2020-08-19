@@ -63,13 +63,13 @@
 .pre-header {
   height: 70px;
   background-color: $primary;
-  .btn {
-    margin: spacing(small);
-  }
   .home {
     float: left;
     margin-left: spacing(superhero);
     color: transparent;
+    @include media($only-mobile) {
+      margin-left: spacing(small);
+    }
     img {
       height: 70px;
     }
