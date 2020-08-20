@@ -18,8 +18,8 @@ $('.reservar').click(function () {
     }  
     //Calcula hora
     const horaReserva = this.parentElement.firstElementChild.id;
-
     //Calcula lugar
+    let lugarReserva = this;
     let lugarReservaPosition = 0;
     let lugares = ["padel1","padel2","padel3","tenis1","tenis2","trinquete"];
 
@@ -55,8 +55,8 @@ $('#boton-reserva').click(function () {
       mode: 'cors'
     }).then(res => res.json())
     .catch(error => console.error('Error:',error))
-    .then(response => console.log('Success:',response));
-    location.reload()
+    .then(response => {console.log('Success:',response);abrirModal();pideAPI();});
+    
   }
 })
 
@@ -85,7 +85,7 @@ $(window).on("load", function () {
   document.getElementById("tercero").innerHTML = diasSemana[pasadoMañana.getDay()] + " " + (pasadoMañana.getDate())
 })
 
-$(".bloque--reservas button").on("click", function () {
+function pideAPI() {
   document.querySelectorAll(".ocupado").forEach(elem => {
     elem.innerHTML = "Reservar"
     elem.className = "reservar"
@@ -97,8 +97,11 @@ $(".bloque--reservas button").on("click", function () {
   })
   .then(function(myJson) {
     reservas(myJson,dia);
-  });
-})
+  })
+  .catch(error => console.error('Error:',error));
+}
+
+$(".bloque--reservas button").on("click",pideAPI);
 
 function reservas(products,diaActual) {
   let finalGroup;
@@ -110,13 +113,13 @@ function reservas(products,diaActual) {
   function updateDisplay() {
     for(let i = 0; i < finalGroup.length; i++) {
       if (finalGroup[i].admitida === "si" && diaActual === finalGroup[i].dia){ 
-        showProduct(finalGroup[i]);
+        showProductReserva(finalGroup[i]);
       }
     }
   }
 
   // Display a product inside the table
-  function showProduct(product) {
+  function showProductReserva(product) {
     const hora = document.getElementById(product.hora).nextElementSibling;
     let lugar = document.getElementById(product.lugar).innerHTML;
     switch (lugar){
