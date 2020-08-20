@@ -55,14 +55,14 @@ $('#boton-reserva').click(function () {
       mode: 'cors'
     }).then(res => res.json())
     .catch(error => console.error('Error:',error))
-    .then(response => {console.log('Success:',response);abrirModal();pideAPI();});
-    
+    .then(response => {console.log('Success:',response);abrirModal();pideAPI();});   
   }
 })
 
 function abrirModal() {
   $('#modal').toggleClass("u-display-none")
   document.getElementById("error-formulario").innerHTML = ""
+  document.getElementById("id-usuario").value = ""
 }
 
 //Funciones para cambiar la fecha
