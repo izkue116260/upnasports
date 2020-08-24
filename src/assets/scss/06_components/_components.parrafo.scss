@@ -1,4 +1,7 @@
 .parrafo {
   padding: spacing(huge);
   text-align: justify;
+  @include media($only-mobile) {
+    padding: spacing(base);
+  }
 }

@@ -55,9 +55,6 @@
       display: none;
     }
   }
-  @include media($only-mobile) {
-    height: 140px;
-  }
 }
 
 .pre-header {

@@ -2,14 +2,7 @@
   margin-top: spacing(large);
   margin-bottom: spacing(large);
   border-top: 1px solid $gris-claro;
-  display: flex;
-  justify-content: flex-end;
-
-  .link {
-    color: $primary;
-    transform: translateZ(0);
-    transition: transform 0.7s ease-out;
-  }
+  width: 100%;
 }
 
 .divider--white {

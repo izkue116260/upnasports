@@ -7,11 +7,6 @@
     @include typi(h1);
     padding-bottom: spacing(base);
 
-    @include media($only-mobile) {
-        margin-bottom: spacing(large);
-        margin-top: spacing(large);
-    }
-
     &.titulo-marca {
         color: $secondary;   
     }
