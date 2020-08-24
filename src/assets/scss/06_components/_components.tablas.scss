@@ -23,9 +23,6 @@
   table-layout: fixed;
   border-collapse: collapse;
   background-color: transparent;
-  @include media($only-mobile) {
-    display: block;
-  }
 }
 
 .table--reservas {

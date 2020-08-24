@@ -116,7 +116,13 @@
 }
 
 .bloque--instalaciones {
+  a {
+    @include media($only-mobile) {
+      text-align: center;
+    }
+  }
   img {
+    width: 300px;
     height: 200px;
   }
   &.imagen--instalacion {
