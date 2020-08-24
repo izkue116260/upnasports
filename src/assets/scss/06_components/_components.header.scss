@@ -63,6 +63,8 @@
 .pre-header {
   height: 70px;
   background-color: $primary;
+  display: flex;
+  justify-content: space-between;
   .home {
     float: left;
     margin-left: spacing(superhero);
@@ -74,11 +76,65 @@
       height: 70px;
     }
   }
+  .icono-menu {
+    margin: auto;
+    margin-right: spacing(base);
+    img{
+      height: 30px;
+    }
+  }
 }
 
 .header-indice {
     background-color: $primary;
     width: 100%;
+}
+
+.menu-movil {
+  display: none;
+  position: relative;
+  .cerrar-menu {
+    float: right;
+    padding: spacing(small);
+    @include typi("h1")
+  }
+  .bloque-header--movil {
+    padding: spacing(base);
+    a {
+      color: $white;
+    }
+  }
+  .bloque-header--actividades {
+    background-color: $actividades2;
+    &:hover {
+      background-color: $actividades;
+    }
+  }
+  .bloque-header--instalaciones {
+    background-color: $instalaciones2;
+    &:hover {
+      background-color: $instalaciones;
+    }
+  }
+  .bloque-header--tarifas {
+    background-color: $tarifas2;
+    &:hover {
+      background-color: $tarifas;
+    }
+  }
+  .bloque-header--actualidad {
+    background-color: $actualidad2;
+    &:hover {
+      background-color: $actualidad;
+    }
+  }
+  .bloque-header--reservas {
+    background-color: $reservas2;
+    &:hover {
+      background-color: $reservas;
+    }
+  }
+  
 }
 
 

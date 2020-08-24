@@ -1,11 +1,12 @@
-$(window).on("load", function () {
-    fetch('http://127.0.0.1:5000/actualidad')
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(myJson) {
-        actualidad(myJson);
-    });
+$(window).on("load",function () {
+  fetch('http://127.0.0.1:5000/actualidad')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    actualidad(myJson);
+  })
+  .catch(error => console.error('Error:',error));
 })
 
 
@@ -65,12 +66,12 @@ function actualidad(products) {
         // that points to an object stored inside the browser
         let objectURL = URL.createObjectURL(blob);
         // invoke showProduct
-        showProduct(objectURL, product);
+        showProductActualidad(objectURL, product);
       });
     }
   
     // Display a product inside the <main> element
-    function showProduct(objectURL, product) {
+    function showProductActualidad(objectURL, product) {
       // create <section>, <h2>, <p>, and <img> elements
       const section = document.createElement('section');
       const heading = document.createElement('h2');
