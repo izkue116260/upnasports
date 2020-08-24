@@ -15,7 +15,7 @@
     box-shadow: -50px 0 50px $gris-claro;
     padding: spacing(large);
     @include media($only-mobile){
-      padding: 0;
+      padding: spacing(small);
     }
   }
 }
