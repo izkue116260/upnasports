@@ -9,3 +9,9 @@ function cerrarHome() {
     var menuMovil = $(".menu-movil")
     menuMovil.toggleClass("u-display-block")
 }
+
+$(window).on("load", function () {
+    if(window.location.href === "http://localhost:3005/proyecto-final/home/") {
+        $(".header-image").addClass("header-image__imagen");
+    }
+})
