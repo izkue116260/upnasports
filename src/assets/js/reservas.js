@@ -67,22 +67,24 @@ function abrirModal() {
 
 //Funciones para cambiar la fecha
 function cambiaAHoy() {
-  dia = hoy.getDate()+"/"+(hoy.getMonth())+"/"+hoy.getFullYear();
+  dia = hoy.getDate()+"/"+(hoy.getMonth()+1)+"/"+hoy.getFullYear();
 }
 
 function cambiaAManana() {
-  dia = mañana.getDate()+"/"+(mañana.getMonth())+"/"+mañana.getFullYear();
+  dia = mañana.getDate()+"/"+(mañana.getMonth()+1)+"/"+mañana.getFullYear();
 }
 
 function cambiaAPasado() {
-  dia = pasadoMañana.getDate()+"/"+(pasadoMañana.getMonth())+"/"+pasadoMañana.getFullYear();
+  dia = pasadoMañana.getDate()+"/"+(pasadoMañana.getMonth()+1)+"/"+pasadoMañana.getFullYear();
 }
 
 //Al cargar la página ponemos los días
 $(window).on("load", function () {
-  document.getElementById("primero").innerHTML = diasSemana[hoy.getDay()] + " " + hoy.getDate()
-  document.getElementById("segundo").innerHTML = diasSemana[mañana.getDay()] + " " + (mañana.getDate())
-  document.getElementById("tercero").innerHTML = diasSemana[pasadoMañana.getDay()] + " " + (pasadoMañana.getDate())
+  if(window.location.href === "http://localhost:3005/proyecto-final/reservas/") {    
+    document.getElementById("primero").innerHTML = diasSemana[hoy.getDay()] + " " + hoy.getDate()
+    document.getElementById("segundo").innerHTML = diasSemana[mañana.getDay()] + " " + (mañana.getDate())
+    document.getElementById("tercero").innerHTML = diasSemana[pasadoMañana.getDay()] + " " + (pasadoMañana.getDate())
+  }
 })
 
 function pideAPI() {
@@ -101,7 +103,23 @@ function pideAPI() {
   .catch(error => console.error('Error:',error));
 }
 
-$(".bloque--reservas button").on("click",pideAPI);
+$(".bloque--reservas button").on("click", function () {
+  pideAPI();
+  // let url = 'http://127.0.0.1:5000/reservas'
+  // var diaReserva = { diaElegido: dia }
+  //   //Envío a la base de datos
+  //   fetch(url, {
+  //     method: 'POST',
+  //     body: JSON.stringify(diaReserva),
+  //     headers:{
+  //       'Content-Type': 'application/json'
+  //     },
+  //     mode: 'cors'
+  //   }).then(res => res.json())
+  //   .catch(error => console.error('Error:',error))
+  //   .then(response =>{ console.log('Success:',response); });
+    
+});
 
 function reservas(products,diaActual) {
   let finalGroup;

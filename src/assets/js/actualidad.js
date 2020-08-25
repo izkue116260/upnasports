@@ -1,12 +1,14 @@
 $(window).on("load",function () {
-  fetch('http://127.0.0.1:5000/actualidad')
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
-    actualidad(myJson);
-  })
-  .catch(error => console.error('Error:',error));
+  if(window.location.href === "http://localhost:3005/proyecto-final/actualidad/") {
+    fetch('http://127.0.0.1:5000/actualidad')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(myJson) {
+      actualidad(myJson);
+    })
+    .catch(error => console.error('Error:',error));
+  }
 })
 
 

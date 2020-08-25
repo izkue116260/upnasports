@@ -34,17 +34,25 @@ def api_all_actividades():
     all_actividades = cur.execute('SELECT * FROM actividades;').fetchall()
     return jsonify(all_actividades)
 
+
+@app.route('/reservas-dia', methods=['POST'])
+def api_formulario_reservas_dia():
+    reserva = request.get_json()
+    global diaMostrado
+    diaMostrado = reserva["diaElegido"]
+    print("nohla"+diaMostrado)
+    return diaMostrado
+
 ## Devuelve la base de datos de reservas
 @app.route('/reservas', methods=['GET'])
 def api_all_reservas():
-    # fecha = format(date.today().day)+"/"+format(date.today().month-1)+"/"+ format(date.today().year)
     conn = sqlite3.connect('reservas.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
+    print("adios"+diaMostrado)
     all_reservas = cur.execute('SELECT * FROM reservas').fetchall()
-    # all_reservas = cur.execute('SELECT * FROM reservas where dia = ?',(fecha, )).fetchall()
-    
     return jsonify(all_reservas)
+
 
 @app.route('/formulario-reservas', methods=['POST'])
 def api_formulario_reservas():
@@ -59,4 +67,6 @@ def api_formulario_reservas():
     return reserva
 
 ## Para ejecutar la apliacion
+diaMostrado = ""
 app.run()
+
