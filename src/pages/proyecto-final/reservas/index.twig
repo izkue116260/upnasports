@@ -18,16 +18,23 @@
 					</p>
 					<div id="elija-fecha" class="elija-fecha"></div>
 					<div class="bloque--reservas">
-						<button id="primero" onclick="cambiaAHoy()">
+						<button class="primero" onclick="cambiaAHoy()">
 							
 						</button>
-						<button id="segundo" onclick="cambiaAManana()">
+						<button class="segundo" onclick="cambiaAManana()">
 							
 						</button>
-						<button id="tercero" onclick="cambiaAPasado()">
+						<button class="tercero" onclick="cambiaAPasado()">
 							
 						</button>
 					</div>
+					<form class="bloque-elige">
+						<select id="rango-edad">
+							<option class="primero" onclick="cambiaAHoy()"></option>
+							<option class="segundo" onclick="cambiaAManana()"></option>
+							<option class="tercero" onclick="cambiaAPasado()"></option>
+						</select>
+					</form>
 					<table class="table table-responsive table--reservas">
 						<thead>
 							<tr>
