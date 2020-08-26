@@ -73,15 +73,10 @@ function actividades(products) {
     // Display a product inside the <main> element
     function showProductActividades(objectURL, product) {
       // create <section>, <h2>, <p>, and <img> elements
-      const actividad = document.createElement('section');
-      const deporte = document.createElement('section');
       const section = document.createElement('section');
       const heading = document.createElement('h2');
       const image = document.createElement('img');
-  
-      // Give the <h2> textContent equal to the product "name" property, but with the first character
-      // replaced with the uppercase version of the first character
-      heading.textContent = product.nombre.replace(product.nombre.charAt(0), product.nombre.charAt(0).toUpperCase());
+    heading.textContent = product.nombre.replace(product.nombre.charAt(0), product.nombre.charAt(0).toUpperCase());
     
       // Set the src of the <img> element to the ObjectURL, and the alt to the product "name" property
       image.src = objectURL;

@@ -81,15 +81,10 @@ function cambiaAPasado() {
 //Al cargar la página ponemos los días
 $(window).on("load", function () {
   if(window.location.href === "http://localhost:3005/proyecto-final/reservas/") {   
-    console.log(document.getElementsByClassName("primero")[0]) 
     document.getElementsByClassName("primero")[0].innerHTML = diasSemana[hoy.getDay()] + " " + hoy.getDate()
     document.getElementsByClassName("segundo")[0].innerHTML = diasSemana[mañana.getDay()] + " " + (mañana.getDate())
     document.getElementsByClassName("tercero")[0].innerHTML = diasSemana[pasadoMañana.getDay()] + " " + (pasadoMañana.getDate())
-  
-    document.getElementsByClassName("primero")[1].innerHTML = diasSemana[hoy.getDay()] + " " + hoy.getDate()
-    document.getElementsByClassName("segundo")[1].innerHTML = diasSemana[mañana.getDay()] + " " + (mañana.getDate())
-    document.getElementsByClassName("tercero")[1].innerHTML = diasSemana[pasadoMañana.getDay()] + " " + (pasadoMañana.getDate())
-  }
+ }
 })
 
 function pideAPI() {

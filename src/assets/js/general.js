@@ -34,24 +34,24 @@ $(window).on("load", function () {
     }
   });
 
-  $("#primero").on("click", function (e) {
+  $(".primero").on("click", function (e) {
     e.preventDefault();
     $(this).addClass("activated");
-    $("#segundo").removeClass("activated");
-    $("#tercero").removeClass("activated");
+    $(".segundo").removeClass("activated");
+    $(".tercero").removeClass("activated");
   });
 
-  $("#segundo").on("click", function (e) {
+  $(".segundo").on("click", function (e) {
     e.preventDefault();
     $(this).addClass("activated");
-    $("#primero").removeClass("activated");
-    $("#tercero").removeClass("activated");
+    $(".primero").removeClass("activated");
+    $(".tercero").removeClass("activated");
   });
 
-  $("#tercero").on("click", function (e) {
+  $(".tercero").on("click", function (e) {
     e.preventDefault();
     $(this).addClass("activated");
-    $("#segundo").removeClass("activated");
-    $("#primero").removeClass("activated");
+    $(".segundo").removeClass("activated");
+    $(".primero").removeClass("activated");
   });
 });
