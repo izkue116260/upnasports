@@ -57,3 +57,12 @@
     margin-top: spacing(large);
     margin-bottom: spacing(small);
 }
+
+actividades section{
+    @include media($only-mobile) {
+        text-align: center;
+        img {
+            width: 100%;
+        }
+    }
+}

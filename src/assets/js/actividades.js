@@ -100,3 +100,9 @@ function actividades(products) {
       section.appendChild(heading);
     }
 }
+
+$(window).on("load",function() {
+  if(window.location.href === "http://localhost:3005/proyecto-final/actividades/") {
+    alert("hola")
+  }
+})
