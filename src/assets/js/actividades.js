@@ -96,9 +96,13 @@ function actividades(products) {
         const horario = document.createElement('p');
         const descripcion = document.createElement('p');
         tituloModal.textContent = heading.textContent;
+        tituloModal.id = "titulo--modal";
         lugar.textContent = "Lugar: " + product.lugar;
+        lugar.id = "lugar";
         horario.textContent = "Horario: " + product.horario;
+        horario.id = "horario";
         descripcion.textContent = product.descripcion;
+        descripcion.id = "descripcion";
 
         tituloModal.classList = "title--actividades u-text-center"
         document.getElementById("modal-actividades").firstElementChild.appendChild(tituloModal);
@@ -118,4 +122,12 @@ function actividades(products) {
 
 function cerrarModalActividades() {
   document.getElementById("modal-actividades").className = "u-display-none"
+  const titulo = document.getElementById("titulo--modal");
+  const lugar = document.getElementById("lugar");
+  const horario = document.getElementById("horario");
+  const descripcion = document.getElementById("descripcion");
+  document.getElementById("modal-actividades").firstElementChild.removeChild(titulo)
+  document.getElementById("modal-actividades").firstElementChild.removeChild(lugar)
+  document.getElementById("modal-actividades").firstElementChild.removeChild(horario)
+  document.getElementById("modal-actividades").firstElementChild.removeChild(descripcion)
 }
