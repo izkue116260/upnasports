@@ -84,19 +84,38 @@ function actividades(products) {
 
       //Estilos y clases
       main.classList = "row"
-      section.classList = "col-sm-4"
+      section.classList = "col-sm-4 actividad"
       heading.classList = "title--actividades"
 
       image.style = "height: 200px;"
 
+      section.onclick = function () {
+        document.getElementById("modal-actividades").className = ""
+        const tituloModal = document.createElement('h2');
+        const lugar = document.createElement('p');
+        const horario = document.createElement('p');
+        const descripcion = document.createElement('p');
+        tituloModal.textContent = heading.textContent;
+        lugar.textContent = "Lugar: " + product.lugar;
+        horario.textContent = "Horario: " + product.horario;
+        descripcion.textContent = product.descripcion;
+
+        tituloModal.classList = "title--actividades u-text-center"
+        document.getElementById("modal-actividades").firstElementChild.appendChild(tituloModal);
+        document.getElementById("modal-actividades").firstElementChild.appendChild(descripcion);
+        document.getElementById("modal-actividades").firstElementChild.appendChild(lugar);
+        document.getElementById("modal-actividades").firstElementChild.appendChild(horario);
+      };
+
+     
+
       main.appendChild(section);
-      // if(product.tipo === 'actividad') {
-      //   actividad.appendChild()
-      // }
-  
-      // append the elements to the DOM as appropriate, to add the product to the UI
      
       section.appendChild(image);
       section.appendChild(heading);
     }
+}
+
+function cerrarModalActividades() {
+  document.getElementById("modal-actividades").className = "u-display-none"
 }
