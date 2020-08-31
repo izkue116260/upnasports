@@ -49,7 +49,7 @@ bjec.clearfix {
 	color: #a2a2a2;
 	filter: alpha(opacity=20);
 	position: absolute;
-	font-family: helvetica, arial, verdana, sans-serif;
+	font-family: $font-family-base;
 	top: 0; right: 0;
 	padding: 5px 10px;
 }

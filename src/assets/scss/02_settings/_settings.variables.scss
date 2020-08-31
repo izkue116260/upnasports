@@ -138,9 +138,14 @@ $typi: (
   ),
 );
 
+@font-face {
+  font-family: "Open Dyslexic";
+  src: url("OpenDyslexic2 (Windows, MacOS, Linux OTF)/OpenDyslexic-Regular.otf");
+}
 
-$font-family-base: "Arial, Helvetica, sans-serif";
-$font-family-second: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+
+$font-family-base: "Arial";
+$font-family-second: "Open Dyslexic";
 $font-size: 15px;
 
 $modularscale: (
