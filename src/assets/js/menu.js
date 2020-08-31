@@ -7,7 +7,7 @@ function abreMenu() {
 
 function cerrarHome() {
     var menuMovil = $(".menu-movil")
-    menuMovil.toggleClass("u-display-block")
+    menuMovil.toggleClass("u-display-none")
 }
 
 $(window).on("load", function () {
