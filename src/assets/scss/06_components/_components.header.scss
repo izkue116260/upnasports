@@ -6,6 +6,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 280px;
+    @include media($only-mobile) {
+      height: 320px;
+    }
   }
 
   .header-image__links {
@@ -88,6 +91,13 @@
 }
 
 .menu-movil {
+  position: absolute;
+  z-index: 5;
+  right: -200px;
+  transition: all 1s ease;
+  &.clickado {
+    right: 0;
+  }
   .cerrar-menu {
     float: right;
     padding: spacing(small);
