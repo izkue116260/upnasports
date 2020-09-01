@@ -107,6 +107,9 @@
   @include typi('h2');
   button {
     padding: spacing(base) spacing(huge);
+    @include media($only-mobile) {
+      padding: spacing(tiny);
+    }
   }
 
   .activated {
@@ -115,9 +118,6 @@
     text-decoration: underline;
   }
 
-  @include media($only-mobile) {
-    display: none;
-  }
 }
 
 .bloque--instalaciones {
@@ -144,6 +144,5 @@
     height: 200px;
     width: 300px;
     object-fit: cover;
-    max-width: 50%;
   }
 }

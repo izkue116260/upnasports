@@ -91,12 +91,17 @@
 }
 
 .menu-movil {
-  position: absolute;
+  position: fixed;
+  display: block;
+  top: 70px;
+  left: 100%;
+  width: 250px;
+  height: 100vh;
   z-index: 5;
-  right: -200px;
-  transition: all 1s ease;
+  
   &.clickado {
-    right: 0;
+    transform: translateX(-250px);
+    transition: 0.5s;
   }
   .cerrar-menu {
     float: right;

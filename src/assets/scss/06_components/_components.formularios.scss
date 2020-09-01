@@ -27,6 +27,9 @@
     border: 1px solid $gris;
     border-radius: 4px;
     width: 100%;
+    @include media($only-mobile) {
+      width: 300px;
+    }
   
     &:read-only {
       background-color: $gris;

@@ -37,6 +37,13 @@
   outline:0;
   width:600px;
   margin-top: 500px;
+  
+  @include media($only-mobile) {
+    width: 350px;
+    margin: 0;
+    margin-top: 70%;
+    position: fixed;
+  }
 }
 
 .cerrar-modal {
