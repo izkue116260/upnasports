@@ -48,6 +48,7 @@
   img {
     width: 64px;
     height: 64px;
+    min-width: auto;
   }
   @include media($only-mobile) {
     text-align: center;
@@ -143,5 +144,6 @@
     height: 200px;
     width: 300px;
     object-fit: cover;
+    max-width: 50%;
   }
 }
