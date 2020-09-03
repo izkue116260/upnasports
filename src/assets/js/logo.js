@@ -1,10 +1,10 @@
 $(window).on("load", function () {
   fetch('http://127.0.0.1:5000/logo')
   .then(function(response) {
-      return response.json();
+    return response.json();
   })
   .then(function(myJson) {
-      logo(myJson);
+    logo(myJson);
   });
 })
 
@@ -77,5 +77,6 @@ function logo(products) {
       image.src = objectURL;
       image.alt = product.nombre;
       main.appendChild(image)
+      
     }
 }
