@@ -41,20 +41,17 @@ def api_all_logo():
     conn.row_factory = dict_factory
     cur = conn.cursor()
     all_logo = cur.execute('SELECT * FROM logo;').fetchall()
-    print("hola")
     return jsonify(all_logo)
 
 ## Devuelve la base de datos de reservas
 @app.route('/reservas', methods=['GET'])
 def api_all_reservas():
     args = request.args
-    print("hola",args["dia"])
     conn = sqlite3.connect('reservas.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     cur.execute('SELECT * FROM reservas WHERE dia = ?',(args["dia"],))
     all_reservas = cur.fetchall()
-    print("adios ",all_reservas)
     return jsonify(all_reservas)
 
 
