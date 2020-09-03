@@ -151,4 +151,16 @@
       height: 100% !important;
     }
   }
+
+  @include media($only-mobile) {
+    text-align: center;
+  }
+}
+
+.balneario {
+  margin-top: spacing(base);
+  display: flex;
+  @include media($only-mobile) {
+    display: block;
+  }
 }

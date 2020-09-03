@@ -25,6 +25,16 @@
     text-align: center
 }
 
+.titulo--balneario {
+    color:$secondary; 
+    font-weight: bold; 
+    text-align: center;
+    @include typi(h2);
+    @include media($desktop) {
+        display: none;
+    }
+}
+
 .title--instalaciones {
    color: $instalaciones2;
    text-align: center;
