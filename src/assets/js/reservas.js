@@ -93,7 +93,7 @@ function pideAPI() {
     elem.className = "reservar"
   })
 
-  fetch('http://127.0.0.1:5000/reservas')
+  fetch('http://127.0.0.1:5000/reservas?dia=5/9/2020')
   .then(function(response) {
       return response.json();
   })
@@ -104,21 +104,7 @@ function pideAPI() {
 }
 
 $(".bloque--reservas button").on("click", function () {
-  pideAPI();
-  // let url = 'http://127.0.0.1:5000/reservas'
-  // var diaReserva = { diaElegido: dia }
-  //   //Envío a la base de datos
-  //   fetch(url, {
-  //     method: 'POST',
-  //     body: JSON.stringify(diaReserva),
-  //     headers:{
-  //       'Content-Type': 'application/json'
-  //     },
-  //     mode: 'cors'
-  //   }).then(res => res.json())
-  //   .catch(error => console.error('Error:',error))
-  //   .then(response =>{ console.log('Success:',response); });
-    
+  pideAPI();    
 });
 
 function reservas(products,diaActual) {
