@@ -145,4 +145,10 @@
     width: 300px;
     object-fit: cover;
   }
+
+  &.imagen--patrocinador {
+    img{
+      height: 100% !important;
+    }
+  }
 }

@@ -25,9 +25,6 @@ body {
   position: relative;
   transition: 0.3s;
 
-  img {
-    max-width: 100%;
-  }
 }
 
 .full-image {
@@ -54,10 +51,6 @@ a {
   &:visited {
     color: $selection-text-color;
   }
-}
-
-.page img {
-  max-width: 100%;
 }
 
 //
