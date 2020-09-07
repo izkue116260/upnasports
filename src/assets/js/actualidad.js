@@ -96,7 +96,7 @@ function actualidad(products) {
       image.className = "u-margin-right-large"
       heading.classList = "titulo--secundario"
 
-      image.style = "width: 400px;"
+      image.style = "width: 350px;"
   
       // append the elements to the DOM as appropriate, to add the product to the UI
       

@@ -68,6 +68,7 @@ function abrirModal() {
 //Funciones para cambiar la fecha
 function cambiaAHoy() {
   dia = hoy.getDate()+"/"+(hoy.getMonth()+1)+"/"+hoy.getFullYear();
+
 }
 
 function cambiaAManana() {
@@ -92,8 +93,7 @@ function pideAPI() {
     elem.innerHTML = "Reservar"
     elem.className = "reservar"
   })
-
-  fetch('http://127.0.0.1:5000/reservas?dia=5/9/2020')
+  fetch('http://127.0.0.1:5000/reservas?dia='+dia)
   .then(function(response) {
       return response.json();
   })
