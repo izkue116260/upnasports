@@ -20,6 +20,19 @@
   }
 }
 
+.actualidad {
+  @include media($only-mobile) {
+    section {
+      display: flex;
+      flex-direction: column;
+      h2 {
+        text-align: center;
+      }  
+    }
+
+  }
+}
+
 .container-inner {
   max-width: 645px !important;
   margin: auto;

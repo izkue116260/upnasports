@@ -25,12 +25,10 @@
   });
 }(jQuery));
 
-// NAVBAR SCROLL
-// $(window).scroll(function(e) {
-//  var scroll = $(window).scrollTop();
-//  if (scroll >= 150) {
-//      $('.c-header').addClass("c-header--scroll");
-//  } else {
-//      $('.c-header').removeClass("c-header--scroll");
-//  }
-// });
+function cambiaFuente() {
+  if(document.getElementsByClassName("page")[0].className === "page") {
+    document.getElementsByClassName("page")[0].classList = "page dislexico"
+  } else {
+    document.getElementsByClassName("page")[0].classList = "page"
+  }
+}

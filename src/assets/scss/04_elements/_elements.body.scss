@@ -1,5 +1,5 @@
 body {
   color: $body-color;
-  font-family: Arial, sans-serif;
+  font-family: $font-family-base;
   @include typi(base);
 }

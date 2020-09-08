@@ -13,6 +13,21 @@
   }
 }
 
+#modal-actividades {
+  z-index: 3;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  &::after, &::before {
+    content:"";
+    clear:both
+  }
+}
+
 .contenido-modal {
   vertical-align: middle;
   margin:auto;
@@ -22,6 +37,13 @@
   outline:0;
   width:600px;
   margin-top: 500px;
+  
+  @include media($only-mobile) {
+    width: 350px;
+    margin: 0;
+    margin-top: 70%;
+    position: fixed;
+  }
 }
 
 .cerrar-modal {

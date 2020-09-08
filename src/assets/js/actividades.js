@@ -84,25 +84,50 @@ function actividades(products) {
 
       //Estilos y clases
       main.classList = "row"
-      section.classList = "col-sm-4"
+      section.classList = "col-sm-4 actividad"
       heading.classList = "title--actividades"
 
       image.style = "height: 200px;"
 
+      section.onclick = function () {
+        document.getElementById("modal-actividades").className = ""
+        const tituloModal = document.createElement('h2');
+        const lugar = document.createElement('p');
+        const horario = document.createElement('p');
+        const descripcion = document.createElement('p');
+        tituloModal.textContent = heading.textContent;
+        tituloModal.id = "titulo--modal";
+        lugar.textContent = "Lugar: " + product.lugar;
+        lugar.id = "lugar";
+        horario.textContent = "Horario: " + product.horario;
+        horario.id = "horario";
+        descripcion.textContent = product.descripcion;
+        descripcion.id = "descripcion";
+
+        tituloModal.classList = "title--actividades u-text-center"
+        document.getElementById("modal-actividades").firstElementChild.appendChild(tituloModal);
+        document.getElementById("modal-actividades").firstElementChild.appendChild(descripcion);
+        document.getElementById("modal-actividades").firstElementChild.appendChild(lugar);
+        document.getElementById("modal-actividades").firstElementChild.appendChild(horario);
+      };
+
+     
+
       main.appendChild(section);
-      // if(product.tipo === 'actividad') {
-      //   actividad.appendChild()
-      // }
-  
-      // append the elements to the DOM as appropriate, to add the product to the UI
      
       section.appendChild(image);
       section.appendChild(heading);
     }
 }
 
-$(window).on("load",function() {
-  if(window.location.href === "http://localhost:3005/proyecto-final/actividades/") {
-    alert("hola")
-  }
-})
+function cerrarModalActividades() {
+  document.getElementById("modal-actividades").className = "u-display-none"
+  const titulo = document.getElementById("titulo--modal");
+  const lugar = document.getElementById("lugar");
+  const horario = document.getElementById("horario");
+  const descripcion = document.getElementById("descripcion");
+  document.getElementById("modal-actividades").firstElementChild.removeChild(titulo)
+  document.getElementById("modal-actividades").firstElementChild.removeChild(lugar)
+  document.getElementById("modal-actividades").firstElementChild.removeChild(horario)
+  document.getElementById("modal-actividades").firstElementChild.removeChild(descripcion)
+}

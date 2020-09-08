@@ -23,6 +23,9 @@
   table-layout: fixed;
   border-collapse: collapse;
   background-color: transparent;
+  @include media($tablet) {
+    width: 100%;
+  }
 }
 
 .table--reservas {
