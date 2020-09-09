@@ -7,7 +7,7 @@ function abreMenu() {
 
 
 $(window).on("load", function () {
-    if(window.location.href === "http://localhost:3005/proyecto-final/home/") {
+    if(window.location.href === "https://upnasports.netlify.app/proyecto-final/home/") {
         $(".header-image").addClass("header-image__imagen");
     }
 })
