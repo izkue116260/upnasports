@@ -6,8 +6,7 @@ $(window).on("load",function () {
     })
     .then(function(myJson) {
       actualidad(myJson);
-    })
-    .catch(error => console.error('Error:',error));
+    });
   }
 })
 
@@ -16,7 +15,7 @@ $(window).on("load",function () {
 function actualidad(products) {
     // grab the UI elements that we need to manipulate
   
-    const main = document.querySelector('actualidad');
+    var main = document.querySelector('actualidad');
   
   
     // these contain the results of filtering by category, and search term
@@ -24,7 +23,7 @@ function actualidad(products) {
     // the searching has been done. Each will be an array containing objects.
     // Each object will represent a product
   
-    let finalGroup;
+    var finalGroup;
   
     // To start with, set finalGroup to equal the entire products database
     // then run updateDisplay(), so ALL products are displayed initially.
@@ -42,12 +41,12 @@ function actualidad(products) {
  
       // if no products match the search term, display a "No results to display" message
       if(finalGroup.length === 0) {
-        const para = document.createElement('p');
+        var para = document.createElement('p');
         para.textContent = 'No results to display!';
         main.appendChild(para);
       // for each product we want to display, pass its product object to fetchBlob()
       } else {
-        for(let i = 0; i < finalGroup.length; i++) {
+        for(var i = 0; i < finalGroup.length; i++) {
           fetchBlob(finalGroup[i]);
         }
       }
@@ -58,7 +57,7 @@ function actualidad(products) {
     // display it
     function fetchBlob(product) {
       // construct the URL path to the image file from the product.image property
-      let url = '../../assets/images/actualidad/' + product.imagen;
+      var url = '../../assets/images/actualidad/' + product.imagen;
       // Use fetch to fetch the image, and convert the resulting response to a blob
       // Again, if any errors occur we report them in the console.
       fetch(url).then(function(response) {
@@ -66,7 +65,7 @@ function actualidad(products) {
       }).then(function(blob) {
         // Convert the blob to an object URL — this is basically an temporary internal URL
         // that points to an object stored inside the browser
-        let objectURL = URL.createObjectURL(blob);
+        var objectURL = URL.createObjectURL(blob);
         // invoke showProduct
         showProductActualidad(objectURL, product);
       });
@@ -75,11 +74,11 @@ function actualidad(products) {
     // Display a product inside the <main> element
     function showProductActualidad(objectURL, product) {
       // create <section>, <h2>, <p>, and <img> elements
-      const section = document.createElement('section');
-      const heading = document.createElement('h2');
-      const noticia = document.createElement('p');
-      const div = document.createElement('div');
-      const image = document.createElement('img');
+      var section = document.createElement('section');
+      var heading = document.createElement('h2');
+      var noticia = document.createElement('p');
+      var div = document.createElement('div');
+      var image = document.createElement('img');
   
       // Give the <h2> textContent equal to the product "name" property, but with the first character
       // replaced with the uppercase version of the first character

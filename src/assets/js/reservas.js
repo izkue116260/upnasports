@@ -1,14 +1,14 @@
 //Variables globales para fecha
-const DIA_EN_MILISEGUNDOS = 24 * 60 * 60 * 1000;
-const hoy = new Date();
-const mañana = new Date(hoy.getTime() + DIA_EN_MILISEGUNDOS);
-const pasadoMañana = new Date(hoy.getTime() + 2*DIA_EN_MILISEGUNDOS);
-let diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+var DIA_EN_MILISEGUNDOS = 24 * 60 * 60 * 1000;
+var hoy = new Date();
+var mañana = new Date(hoy.getTime() + DIA_EN_MILISEGUNDOS);
+var pasadoMañana = new Date(hoy.getTime() + 2*DIA_EN_MILISEGUNDOS);
+var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
 
 //Variables globales
-let hora = ""
-let lugar = ""
-let dia = ""
+var hora = ""
+var lugar = ""
+var dia = ""
 
 //Funciones
 $('.reservar').click(function () {
@@ -17,11 +17,11 @@ $('.reservar').click(function () {
       abrirModal()
     }  
     //Calcula hora
-    const horaReserva = this.parentElement.firstElementChild.id;
+    var horaReserva = this.parentElement.firstElementChild.id;
     //Calcula lugar
-    let lugarReserva = this;
-    let lugarReservaPosition = 0;
-    let lugares = ["padel1","padel2","padel3","tenis1","tenis2","trinquete"];
+    var lugarReserva = this;
+    var lugarReservaPosition = 0;
+    var lugares = ["padel1","padel2","padel3","tenis1","tenis2","trinquete"];
 
     while(lugarReserva.previousElementSibling.id !== horaReserva) {
       lugarReserva = lugarReserva.previousElementSibling;
@@ -43,7 +43,7 @@ $('#boton-reserva').click(function () {
   } else {
     //Info para envio a la base de datos
     var reserva = { dia: dia, hora: hora, lugar: lugar, idUsuario: document.getElementById("id-usuario").value , admitida: 'si' };
-    let url = 'http://127.0.0.1:5000/formulario-reservas'
+    var url = 'http://127.0.0.1:5000/formulario-reservas'
     
     //Envío a la base de datos
     fetch(url, {
@@ -53,9 +53,12 @@ $('#boton-reserva').click(function () {
         'Content-Type': 'application/json'
       },
       mode: 'cors'
-    }).then(res => res.json())
-    .catch(error => console.error('Error:',error))
-    .then(response => {console.log('Success:',response);abrirModal();pideAPI();});   
+    }).then(function(res){return res.json()})
+    .catch(function(error){return console.error('Error:',error)})
+    .then(function(response){
+      abrirModal();
+      pideAPI();
+    });   
   }
 })
 
@@ -89,7 +92,7 @@ $(window).on("load", function () {
 })
 
 function pideAPI() {
-  document.querySelectorAll(".ocupado").forEach(elem => {
+  document.querySelectorAll(".ocupado").forEach(function(elem) {
     elem.innerHTML = "Reservar"
     elem.className = "reservar"
   })
@@ -100,7 +103,7 @@ function pideAPI() {
   .then(function(myJson) {
     reservas(myJson,dia);
   })
-  .catch(error => console.error('Error:',error));
+  .catch(function(error){return console.error('Error:',error)});
 }
 
 $(".bloque--reservas button").on("click", function () {
@@ -108,14 +111,14 @@ $(".bloque--reservas button").on("click", function () {
 });
 
 function reservas(products,diaActual) {
-  let finalGroup;
+  var finalGroup;
 
   finalGroup = products;
   updateDisplay(diaActual);
   finalGroup = [];
 
   function updateDisplay() {
-    for(let i = 0; i < finalGroup.length; i++) {
+    for(var i = 0; i < finalGroup.length; i++) {
       if (finalGroup[i].admitida === "si" && diaActual === finalGroup[i].dia){ 
         showProductReserva(finalGroup[i]);
       }
@@ -124,8 +127,8 @@ function reservas(products,diaActual) {
 
   // Display a product inside the table
   function showProductReserva(product) {
-    const hora = document.getElementById(product.hora).nextElementSibling;
-    let lugar = document.getElementById(product.lugar).innerHTML;
+    var hora = document.getElementById(product.hora).nextElementSibling;
+    var lugar = document.getElementById(product.lugar).innerHTML;
     switch (lugar){
       case "Padel 1": 
         lugar = 0;
@@ -149,8 +152,8 @@ function reservas(products,diaActual) {
         lugar = 6;
         break;
     }
-    let ocupado = hora;
-    for(let i = 0; i < lugar; i++) {
+    var ocupado = hora;
+    for(var i = 0; i < lugar; i++) {
       ocupado = ocupado.nextElementSibling;
     }
     ocupado.innerHTML = "Ocupado"
