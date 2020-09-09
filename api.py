@@ -19,7 +19,7 @@ def dict_factory(cursor, row):
 ## Devuelve la base de datos de actualidad
 @app.route('/actualidad', methods=['GET'])
 def api_all():
-    conn = sqlite3.connect('actualidad.db')
+    conn = sqlite3.connect('src/assets/bases-de-datos/actualidad.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     all_noticias = cur.execute('SELECT * FROM noticias;').fetchall()
@@ -28,7 +28,7 @@ def api_all():
 ## Devuelve la base de datos de actividades
 @app.route('/actividades', methods=['GET'])
 def api_all_actividades():
-    conn = sqlite3.connect('actividades.db')
+    conn = sqlite3.connect('src/assets/bases-de-datos/actividades.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     all_actividades = cur.execute('SELECT * FROM actividades;').fetchall()
@@ -37,7 +37,7 @@ def api_all_actividades():
 ## Logo
 @app.route('/logo', methods=['GET'])
 def api_all_logo():
-    conn = sqlite3.connect('logo.db')
+    conn = sqlite3.connect('src/assets/bases-de-datos/logo.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     all_logo = cur.execute('SELECT * FROM logo;').fetchall()
@@ -47,7 +47,7 @@ def api_all_logo():
 @app.route('/reservas', methods=['GET'])
 def api_all_reservas():
     args = request.args
-    conn = sqlite3.connect('reservas.db')
+    conn = sqlite3.connect('src/assets/bases-de-datos/reservas.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     cur.execute('SELECT * FROM reservas WHERE dia = ?',(args["dia"],))
