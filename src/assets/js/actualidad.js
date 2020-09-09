@@ -1,6 +1,6 @@
 $(window).on("load",function () {
   if(window.location.href === "https://upnasports.netlify.app/proyecto-final/actualidad/") {
-    fetch('http://127.0.0.1:5000/actualidad/')
+    fetch('http://127.0.0.1:5000/actualidad')
     .then(function(response) {
       return response.json();
     })
