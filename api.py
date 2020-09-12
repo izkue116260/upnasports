@@ -60,7 +60,7 @@ def api_formulario_reservas():
     reserva = request.get_json()
     sql = "INSERT into reservas (dia,hora,lugar,idUsuario,admitida) VALUES (?,?,?,?,?)"
     valores = (reserva["dia"],reserva["hora"],reserva["lugar"],reserva["idUsuario"],reserva["admitida"])
-    conn = sqlite3.connect('reservas.db')
+    conn = sqlite3.connect('src/assets/bases-de-datos/reservas.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     cur.execute(sql,valores)
