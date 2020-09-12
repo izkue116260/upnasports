@@ -1,5 +1,5 @@
 $(window).on("load", function () {
-  if(window.location.href === "https://upnasports.netlify.app/proyecto-final/actividades/") {    
+  if(window.location.href === "upnasports.surge.sh/proyecto-final/actividades/") {    
     fetch('http://127.0.0.1:5000/actividades')
     .then(function(response) {
         return response.json();
