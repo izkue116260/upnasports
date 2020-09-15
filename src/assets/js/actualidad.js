@@ -1,5 +1,5 @@
 $(window).on("load",function () {
-  if(window.location.href === "http://upnasports.surge.sh/proyecto-final/home/") {
+  if(window.location.href === "http://upnasports.surge.sh/proyecto-final/actualidad/") {
     fetch('http://18.222.58.181:8081/actualidad')
     .then(function(response) {
       return response.json();

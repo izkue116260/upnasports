@@ -84,7 +84,7 @@ function cambiaAPasado() {
 
 //Al cargar la página ponemos los días
 $(window).on("load", function () {
-  if(window.location.href === "http://upnasports.surge.sh/proyecto-final/home/") {   
+  if(window.location.href === "http://upnasports.surge.sh/proyecto-final/reservas/") {   
     document.getElementsByClassName("primero")[0].innerHTML = diasSemana[hoy.getDay()] + " " + hoy.getDate()
     document.getElementsByClassName("segundo")[0].innerHTML = diasSemana[mañana.getDay()] + " " + (mañana.getDate())
     document.getElementsByClassName("tercero")[0].innerHTML = diasSemana[pasadoMañana.getDay()] + " " + (pasadoMañana.getDate())
