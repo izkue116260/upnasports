@@ -1,6 +1,6 @@
 $(window).on("load", function () {
-  if(window.location.href === "http://localhost:3005/proyecto-final/actividades/") {    
-    fetch('http://127.0.0.1:5000/actividades')
+  if(window.location.href === "http://upnasports.surge.sh/proyecto-final/home/") {    
+    fetch('http://18.222.58.181:8081/actividades')
     .then(function(response) {
         return response.json();
     })

@@ -1,5 +1,5 @@
 $(window).on("load", function () {
-  fetch('http://127.0.0.1:5000/logo')
+  fetch('http://18.222.58.181:8081/logo')
   .then(function(response) {
     return response.json();
   })

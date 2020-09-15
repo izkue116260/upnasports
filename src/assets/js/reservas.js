@@ -43,7 +43,7 @@ $('#boton-reserva').click(function () {
   } else {
     //Info para envio a la base de datos
     var reserva = { dia: dia, hora: hora, lugar: lugar, idUsuario: document.getElementById("id-usuario").value , admitida: 'si' };
-    var url = 'http://127.0.0.1:5000/formulario-reservas'
+    var url = 'http://18.222.58.181:8081/formulario-reservas'
     
     //Envío a la base de datos
     fetch(url, {
@@ -84,7 +84,7 @@ function cambiaAPasado() {
 
 //Al cargar la página ponemos los días
 $(window).on("load", function () {
-  if(window.location.href === "http://localhost:3005/proyecto-final/reservas/") {   
+  if(window.location.href === "http://upnasports.surge.sh/proyecto-final/home/") {   
     document.getElementsByClassName("primero")[0].innerHTML = diasSemana[hoy.getDay()] + " " + hoy.getDate()
     document.getElementsByClassName("segundo")[0].innerHTML = diasSemana[mañana.getDay()] + " " + (mañana.getDate())
     document.getElementsByClassName("tercero")[0].innerHTML = diasSemana[pasadoMañana.getDay()] + " " + (pasadoMañana.getDate())
@@ -96,7 +96,7 @@ function pideAPI() {
     elem.innerHTML = "Reservar"
     elem.className = "reservar"
   })
-  fetch('http://127.0.0.1:5000/reservas?dia='+dia)
+  fetch('http://18.222.58.181:8081/reservas?dia='+dia)
   .then(function(response) {
       return response.json();
   })
