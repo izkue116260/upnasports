@@ -9,7 +9,7 @@ $(window).on("load", function () {
     $(".form-group--correo").toggleClass("u-display-none");
   });
 
-  $("#rango-edad").change(function () {
+  $("#rango-edad").on("change",function () {
     if ($(this).val() == 0) {
       $(".bloque--vacio").removeClass("u-display-none");
       $(".bloque--tres-cinco").addClass("u-display-none");
