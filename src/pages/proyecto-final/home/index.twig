@@ -4,7 +4,6 @@
 
 	<!-- CONTENT HTML HERE -->
 	<section class="o-section o-section--large">
-		<button class="btn--fixed" onclick="cambiaFuente();">Cambia tipo de letra</button>
 		<div class="container">
 			<div class="shadow-derecha">
 				<div class="shadow-izquierda">
@@ -12,25 +11,26 @@
 						Aquí le mostramos algunos de los temas de interés común de la mayoría de usuarios.
 						Para obtener más información sobre alguno de los temas que muestra la imagen pulse en ella.
 					</div>
-					<div class="bloque-slide u-margin-bottom-superhero">
-						<a href="../balneario" alt="Enlace a balneario">
-							<img class="image-slide" src="../../assets/images/balneario.jpg" alt="Una esquina de un balneario con dos chorros con poca anchura y gran potencia y otro más ancho y menos potencia">
+					<div class="u-display-flex">
+						<button class="button-slide button-slide--left" onclick="plusDivs(-1)">< Anterior</button>
+						<button class="button-slide button-slide--right" onclick="plusDivs(1)">Siguiente ></button>
+					</div>
+					<div aria-live="polite" class="bloque-slide u-margin-bottom-superhero">
+						<a aria-hidden="false" aria-roledescription="slide" href="../balneario" alt="Enlace a balneario">
+							<img class="image-slide" src="../../assets/images/balneario.jpg" alt="Una piscina con tres chorros de diferentes anchuras y potencias">
 						</a>
-						<a href="../ofertas" alt="Enlace a ofertas">
+						<a aria-hidden="true" aria-roledescription="slide" href="../ofertas" alt="Enlace a ofertas">
 							<img class="image-slide" src="../../assets/images/2x1.jpg" alt="Letras 2 por 1">
 						</a>
-						<a href="../actividadesInfantiles" alt="Enlace a actividades infantiles">
+						<a aria-hidden="true" aria-roledescription="slide" href="../actividadesInfantiles" alt="Enlace a actividades infantiles">
 							<img class="image-slide" src="../../assets/images/campamento-urbano.jpg" alt="Unos niños con las manos en la cabeza imitando la aleta superior de un tiburón">
 						</a>
-						<a href="../verano" alt="Enlace a información sobre verano">
+						<a aria-hidden="true" aria-roledescription="slide" href="../verano" alt="Enlace a información sobre verano">
 							<img class="image-slide" src="../../assets/images/fiestas.jpg" alt="Piscina con mucha gente de diferentes edades con juguetes e hinchables.">
 						</a>
-						<a href="../ludoteca" alt="Enlace a información sobre ludoteca">
+						<a aria-hidden="true" aria-roledescription="slide" href="../ludoteca" alt="Enlace a información sobre ludoteca">
 							<img class="image-slide" src="../../assets/images/ludoteka.jpg" alt="Niños jugando con casas de muñecas.">
 						</a>
-
-						<button class="button-slide button-slide--left" onclick="plusDivs(-1)">&#11207;</button>
-						<button class="button-slide button-slide--right" onclick="plusDivs(1)">&#11208;</button>
 					</div>
 					
 					<div class="row">

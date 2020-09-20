@@ -96,3 +96,16 @@
   color: $white;
   font-weight: bold;
 }
+
+.button-slide {
+  width: 50%;
+  background-color: $primary;
+  color: $white;
+  font-weight: bold;
+  &.button-slide--left {
+    left: 0;
+  }
+  &.button-slide--right { 
+    right: 0;
+  }
+}

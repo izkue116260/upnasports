@@ -9,21 +9,6 @@
             }
         }
     }
-    .button-slide {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        opacity: 30%;
-        &.button-slide--left {
-            left: 0;
-        }
-        &.button-slide--right { 
-            right: 0;
-        }
-        &:hover {
-            opacity: 70%;
-        }
-    }
     .texto--slide {
       width: 250px;
       background-color: $primary;
