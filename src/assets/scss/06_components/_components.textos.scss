@@ -16,6 +16,7 @@
 }
 
 .elija-fecha {
+    padding: spacing(huge) 0;
     text-align: center;
     @include typi("h2");
     text-transform: uppercase;

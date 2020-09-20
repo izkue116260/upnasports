@@ -12,7 +12,6 @@ var dia = ""
 
 //Funciones
 $('.reservar').click(function () {
-  if(dia !== ""){
     if(this.innerHTML === "Reservar"){
       abrirModal()
     }  
@@ -32,9 +31,6 @@ $('.reservar').click(function () {
     //Asignamos a variables globales
     hora = horaReserva
     lugar = lugarReserva
-  } else {
-    document.getElementById("elija-fecha").innerHTML = "Elija una fecha"
-  }
 })
 
 $('#boton-reserva').click(function () {
@@ -71,15 +67,20 @@ function abrirModal() {
 //Funciones para cambiar la fecha
 function cambiaAHoy() {
   dia = hoy.getDate()+"/"+(hoy.getMonth()+1)+"/"+hoy.getFullYear();
-
+  document.getElementsByClassName('table-responsive')[0].classList = "table-responsive"
+  document.getElementsByClassName('elija-fecha')[0].classList = "elija-fecha u-display-none"
 }
 
 function cambiaAManana() {
   dia = mañana.getDate()+"/"+(mañana.getMonth()+1)+"/"+mañana.getFullYear();
+  document.getElementsByClassName('table-responsive')[0].classList = "table-responsive"
+  document.getElementsByClassName('elija-fecha')[0].classList = "elija-fecha u-display-none"
 }
 
 function cambiaAPasado() {
   dia = pasadoMañana.getDate()+"/"+(pasadoMañana.getMonth()+1)+"/"+pasadoMañana.getFullYear();
+  document.getElementsByClassName('table-responsive')[0].classList = "table-responsive"
+  document.getElementsByClassName('elija-fecha')[0].classList = "elija-fecha u-display-none"
 }
 
 //Al cargar la página ponemos los días
