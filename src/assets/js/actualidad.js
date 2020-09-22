@@ -88,7 +88,7 @@ function actualidad(products) {
   
       // Set the src of the <img> element to the ObjectURL, and the alt to the product "name" property
       image.src = objectURL;
-      image.alt = product.titulo;
+      image.alt = product.alt;
 
       //Estilos y clases
       section.classList = "u-display-flex u-margin-bottom-large "

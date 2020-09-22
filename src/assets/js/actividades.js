@@ -82,6 +82,7 @@ function actividades(products) {
       image.src = objectURL;
       image.alt = product.alt;
       image.tabIndex = i + 7;
+      
 
       //Estilos y clases
       main.classList = "row"
