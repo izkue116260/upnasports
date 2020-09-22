@@ -54,4 +54,5 @@ $(window).on("load", function () {
     $(".segundo").removeClass("activated");
     $(".primero").removeClass("activated");
   });
+  document.getElementsByClassName('pre-header')[0].focus();
 });

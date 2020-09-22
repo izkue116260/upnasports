@@ -15,11 +15,13 @@ if ($('.bloque-slide').length){
     if (n < 1) {slideIndex = x.length}
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none";
-      $(".bloque-slide a")[i].setAttribute("aria-hidden","true") 
+      $(".bloque-slide a")[i].setAttribute("aria-hidden","true")
+      $(".bloque-slide a")[i].removeAttribute("tabindex")
     }
     // x[slideIndex-1].attr("aria-hidden","true");
     x[slideIndex-1].style.display = "block"; 
     $(".bloque-slide a")[slideIndex-1].setAttribute("aria-hidden","false")
+    $(".bloque-slide a")[slideIndex-1].setAttribute("tabindex","10")
   }
 
   function carousel() {
@@ -28,11 +30,12 @@ if ($('.bloque-slide').length){
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none";  
       $(".bloque-slide a")[i].setAttribute("aria-hidden","true")
+      $(".bloque-slide a")[i].removeAttribute("tabindex")
     }
     myIndex++;
     if (myIndex > x.length) {myIndex = 1}    
     x[myIndex-1].style.display = "block";  
     $(".bloque-slide a")[myIndex-1].setAttribute("aria-hidden","false")
-    //setTimeout(carousel, 10000); // Change image every 5 seconds
+    $(".bloque-slide a")[myIndex-1].setAttribute("tabindex","10")
   }
 }

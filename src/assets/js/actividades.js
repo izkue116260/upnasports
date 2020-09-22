@@ -46,7 +46,7 @@ function actividades(products) {
       // for each product we want to display, pass its product object to fetchBlob()
       } else {
         for(var i = 0; i < finalGroup.length; i++) {
-          fetchBlobActividades(finalGroup[i]);
+          fetchBlobActividades(finalGroup[i], i);
         }
       }
     }
@@ -54,7 +54,7 @@ function actividades(products) {
     // fetchBlob uses fetch to retrieve the image for that product, and then sends the
     // resulting image display URL and product object on to showProduct() to finally
     // display it
-    function fetchBlobActividades(product) {
+    function fetchBlobActividades(product, i) {
       // construct the URL path to the image file from the product.image property
       var url = '../../assets/images/actividades/' + product.imagen;
       // Use fetch to fetch the image, and convert the resulting response to a blob
@@ -66,12 +66,12 @@ function actividades(products) {
         // that points to an object stored inside the browser
         var objectURL = URL.createObjectURL(blob);
         // invoke showProduct
-        showProductActividades(objectURL, product);
+        showProductActividades(objectURL, product, i);
       });
     }
   
     // Display a product inside the <main> element
-    function showProductActividades(objectURL, product) {
+    function showProductActividades(objectURL, product, i) {
       // create <section>, <h2>, <p>, and <img> elements
       var section = document.createElement('section');
       var heading = document.createElement('h2');
@@ -81,6 +81,7 @@ function actividades(products) {
       // Set the src of the <img> element to the ObjectURL, and the alt to the product "name" property
       image.src = objectURL;
       image.alt = product.nombre;
+      image.tabIndex = i + 7;
 
       //Estilos y clases
       main.classList = "row"
@@ -88,6 +89,7 @@ function actividades(products) {
       heading.classList = "title--actividades"
 
       image.style = "height: 200px;"
+      
 
       section.onclick = function () {
         document.getElementById("modal-actividades").className = ""
