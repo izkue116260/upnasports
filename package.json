@@ -23,6 +23,7 @@
     "typi": "^3.2.0"
   },
   "dependencies": {
+    "imagemin-webp": "^6.0.0",
     "node-gyp": "^7.0.0",
     "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
