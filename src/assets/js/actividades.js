@@ -80,7 +80,7 @@ function actividades(products) {
     
       // Set the src of the <img> element to the ObjectURL, and the alt to the product "name" property
       image.src = objectURL;
-      image.alt = product.nombre;
+      image.alt = product.alt;
       image.tabIndex = i + 7;
 
       //Estilos y clases
