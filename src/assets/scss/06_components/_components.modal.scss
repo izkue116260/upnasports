@@ -52,4 +52,5 @@
   top: 0;
   cursor: pointer;
   padding: spacing(small);
+  @include typi(h2)
 }
