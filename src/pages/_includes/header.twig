@@ -4,7 +4,11 @@
         <a tabindex="1" href="/proyecto-final/home/" class="home">
             
         </a>
-        <button tabindex="2" class="btn btn-secondary" onclick="cambiaFuente();">Haz click para cambiar la fuente de letra</button>
+        <div>
+            <button type="button" data-accessibility="font">Tamaño más grande</button>
+            <button type="button" data-accessibility="contrast">Todo oscuro</button>
+            {# <button type="button" data-accessibility="typeFont" onclick="cambiaFuente();">Cambia fuente</button> #}
+        </div>
         <a onclick="abreMenu()" class="icono-menu u-display-none-desktop">
             <img src="/assets/images/menu-hamburguesa.png" alt="Tres líneas horizontales paralelas que abren el menú principal" />
         </a>

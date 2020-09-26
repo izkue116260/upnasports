@@ -1,0 +1,15 @@
+.accessibility-font {
+  font-size: 1.25em !important;
+  font-size: 1.25rem !important;
+}
+.accessibility-font input,
+.accessibility-font textarea,
+.accessibility-font select,
+.accessibility-font button {
+  font-size: 1.041625em;
+  font-size: 1.04163rem;
+}
+.accessibility-contrast {
+  color: #fff;
+  background: #000;
+}
