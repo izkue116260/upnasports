@@ -1,4 +1,4 @@
-![logo]:https://github.com/oierbravo/pleasure/raw/master/src/assets/images/logo.png "Pleasure"
+![logo]:https://github.com/oierbravo/pleasure/raw/master/src/assets/images/logo.webp "Pleasure"
 
 # Pleasure Static Site Generator
 > Twig based Static Site generator powered by gulp.
@@ -77,13 +77,10 @@ src/assets/sass/
 
 ```
 src/pages/
-  |-- _components/ (reusable twig components)
+  |-- proyecot-final/ (all the project)
   |-- _data/ (site data and specific page data)
   |-- _includes/ (common place for include files)
   |-- _layouts/ (html and page layout)
-  |-- page1/index.twig (example page)
-  |-- page2/index.twig (example page with partials)
-  |-- dev-guide.twig (pages, components and svg icons index, for development purposes)
   |-- index.twig
 
 ```
